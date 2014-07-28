@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+
 Send($_GET["To"],$_GET["Subject"],$_GET["Content"],$_GET["BotNick"]);
 //Send("pcchou","函數","函數測試","聽說這裡可以亂塞東西//////");
 function Send($to,$sbj,$content,$BOTNick){
