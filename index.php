@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,12 +30,12 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">Better Avatar for Bahamut</a>
+          <a class="navbar-brand" href=".">Better Avatar for Bahamut</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="#">立即使用</a></li>
+            <li class="active"><a href=".">Home</a></li>
+            <li><a href="use.php">立即使用</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -53,18 +52,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-        	<h2><center>使用技術區</center></h2>
-        	<p>目前用到的技術有：<br>
-        		Bootstrap<br>
-        		Gravatar</p>
+          <h2><center>使用技術區</center></h2>
+          <p>目前用到的技術有：<br>
+            Bootstrap<br>
+            Gravatar</p>
         </div>
         <div class="col-md-4">
-          	<h2><center>原理介紹區</center></h2>
+            <h2><center>原理介紹區</center></h2>
         </div>
         <div class="col-md-4">
-          	<h2><center>授權介紹區</center></h2>
-          	<p>套用授權：<br>
-          		反正是Open Source就對了啦w</p>
+            <h2><center>授權介紹區</center></h2>
+            <p>套用授權：<br>
+              反正是Open Source就對了啦w</p>
         </div>
 
       </div>
