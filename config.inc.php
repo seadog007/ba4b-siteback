@@ -26,7 +26,7 @@
 	// MySQL Database Username | MySQL資料庫使用者名稱
 	define("DB_USER","username_here");
 	// MySQL Database Password | MySQL資料庫密碼
-	define("DB_USER","password_here");
+	define("DB_PASS","password_here");
 	// MySQL Host Address | MySQL主機位址
 	define("DB_HOST","localhost");
 	
