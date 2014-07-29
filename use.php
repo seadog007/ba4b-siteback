@@ -27,19 +27,7 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-<div class="container">
-	        <div class="navbar-header">
-          <a class="navbar-brand" href=".">Better Avatar for Bahamut</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href=".">Home</a></li>
-            <li class="active"><a href=".">立即使用</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+    <?php $page="use.php"; include "navbar.php" ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
