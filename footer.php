@@ -15,7 +15,7 @@
     Chou</a>、<a href="http://about.me/seadog007">海豹</a>、<a href=
     "http://home.gamer.com.tw/happyjohn369">曙</a>、<a href=
     "https://www.facebook.com/petercomm.hsu">Petercommand</a>、<a href="http://about.me/denny0223">Denny
-    Huang</a>…等數不清的人一起協作，才能問世的。<br>
+    Huang</a>、<a href="home.gamer.com.tw/homeindex.php?owner=mmis1000">殘風</a>…等數不清的人一起協作，才能問世的。<br>
     前往<a href="https://github.com/ba4b">我們的GitHub專案</a>來了解更多！<br>
     <br>
     <br>
