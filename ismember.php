@@ -18,3 +18,4 @@ if (preg_match("/[a-zA-Z0-9]/",$name)) {
     trigger_error('Don\'t try SQL Injection!');
 }
 
+?>
