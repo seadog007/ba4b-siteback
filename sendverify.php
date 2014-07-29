@@ -1,8 +1,10 @@
 <?php
 include "send.php";
+include "isbahamember.php";
+
 $Name = $_POST["Name"];
-if(@preg_match("/[^a-zA-Z0-9]/",$Name)||strlen($Name)>=13||$Name==""){
-	echo "Error";
+if((@preg_match("/[^a-zA-Z0-9]/",$Name)||strlen($Name)>=13||$Name=="")&&isbahamember($Name)){
+	echo "0";
 }else{
 	$Time = time();
 	$Exp = time() + (60 * 60 * 2);
@@ -17,8 +19,9 @@ if(@preg_match("/[^a-zA-Z0-9]/",$Name)||strlen($Name)>=13||$Name==""){
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}else{
 		$sql="INSERT INTO `verify` (`ID`, `BAHA_ID`, `HASH`, `TIME`, `EXPIRE_TIME`) VALUES (NULL, '" . $Name . "', '" . $Hash . "', '" . $Time . "', '" . $Exp . "');"
-	mysqli_query($con,$sql);
-	mysqli_close($con);
+		mysqli_query($con,$sql);
+		mysqli_close($con);
+		send($Name,"主旨","請進入http://ba4b.net/verify.php?hash?" . $Hash);
 	}
 }
 ?>
