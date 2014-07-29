@@ -31,8 +31,19 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <a href="https://github.com/ba4b"><img style="position: absolute; top: 150; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
-        <p align="center" valign="center"><br>驗證你的巴哈帳號</p>
+        <p align="center" valign="center"><br>驗證您的巴哈帳號</p>
+        <br>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        <center>
+        <form action="a.php" method="post">
+        <input type="text" class="form-control" placeholder="您的巴哈帳號">
+        <br>
+        <input type="submit" class="btn btn-primary" value="驗證">
+      </center>
+      </form>
+        </div>
       </div>
     </div>
       <hr>
