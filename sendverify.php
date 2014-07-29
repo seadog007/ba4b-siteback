@@ -1,7 +1,7 @@
 <?php
 include "send.php";
 $Name = $_POST["Name"];
-if(preg_match($Name, "[^a-zA-Z0-9]")||strlen($Name)>d13){
+if(preg_match($Name, "[^a-zA-Z0-9]")||strlen($Name)>=13){
 	echo "Error"
 }else{
 	$Time = time();
