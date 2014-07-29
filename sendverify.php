@@ -18,7 +18,7 @@ if((@preg_match("/[^a-zA-Z0-9]/",$Name)||strlen($Name)>=13||$Name=="")&&isbahame
 	if (mysqli_connect_errno()) {
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}else{
-		$sql="INSERT INTO `verify` (`ID`, `BAHA_ID`, `HASH`, `TIME`, `EXPIRE_TIME`) VALUES (NULL, '" . $Name . "', '" . $Hash . "', '" . $Time . "', '" . $Exp . "');"
+		$sql="INSERT INTO `verify` (`ID`, `BAHA_ID`, `HASH`, `TIME`, `EXPIRE_TIME`) VALUES (NULL, '" . $Name . "', '" . $Hash . "', '" . $Time . "', '" . $Exp . "');";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
 		send($Name,"主旨","請進入http://ba4b.net/verify.php?hash?" . $Hash);
