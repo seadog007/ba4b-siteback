@@ -32,15 +32,16 @@
     <div class="jumbotron">
       <div class="container">
         <p align="center" valign="center"><br>驗證您的巴哈帳號</p>
+
         <br>
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
         <center>
-        <form action="a.php" method="post">
-        <input type="text" class="form-control" name="Name" placeholder="您的巴哈帳號">
+        <form action="sendverify.php" method="POST" onSubmit="return checkform()">
+        <input type="text" class="form-control" id="Name" name="Name" placeholder="您的巴哈帳號">
         <br>
-        <input type="submit" class="btn btn-primary" value="驗證">
+        <input type="submit" class="btn btn-primary" id="verify" value="驗證">
       </center>
       </form>
         </div>
@@ -55,5 +56,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/shake.js"></script>
+    <script src="dist/js/checkform.js"></script>
   </body>
 </html>
