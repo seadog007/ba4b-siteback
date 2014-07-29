@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Better Avatar for Bahamut</title>
+    <title>巴哈頭像大改造 | Better Avatar for Bahamut</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
