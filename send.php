@@ -44,9 +44,8 @@ else
 
 curl_close($ch);
 }
-?>
-
 
 function SendS($to,$sbj,$content){
     Send($to,$sbj,$content, BOT_NICK)
 }
+?>
