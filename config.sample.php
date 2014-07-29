@@ -9,6 +9,13 @@
 	 * After editing, Please rename this file to config.php. | 編輯後，請把檔案名稱改成config.php。
 	 */
 	 
+     
+	// System Settings - System related settings.
+	// 系統設定 - 系統相關設定。
+    
+	// The root URL of this application. | 這個程式的根目錄的URL
+	define("SYS_URL","URL_here");
+    
 	// Message Bot Settings - This is the account used to send verification messages. (Please use bahamut mobile version.)
 	// 訊息bot設定 - 這個帳號會被用來傳送確認訊息。 （請使用手機版本的巴哈姆特）
 	
