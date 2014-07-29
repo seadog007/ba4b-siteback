@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
 
-//Send("pcchou","函數","函數測試");
-function Send($to,$sbj,$content){
+//Send("收件人","主旨","內容","機器人暱稱");
+function Send($to,$sbj,$content,$BOT_Nick){
 // Request: My API (http://mailbox.gamer.com.tw/m/send2.php)
  
 $ch = curl_init("http://mailbox.gamer.com.tw/m/send2.php");
@@ -11,7 +11,7 @@ curl_setopt($ch, CURLOPT_POST, TRUE);
 // Headers
  
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        "Cookie: MB_BAHAID=" . BOT_ID . "; MB_BAHARUNE=" . BOT_RUNE . "; MB_BAHANICK=BA4B服務帳號",
+        "Cookie: MB_BAHAID=" . BOT_ID . "; MB_BAHARUNE=" . BOT_RUNE . "; MB_BAHANICK=" . $BOT_Nick,
         "Host: mailbox.gamer.com.tw",
         "Origin: http://mailbox.gamer.com.tw",
 ));
