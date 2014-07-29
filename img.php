@@ -1,8 +1,6 @@
 <?php
 include 'config.php';
 
-//parse_str(implode('&', array_slice($argv, 1)), $_GET);
-
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $name = $_GET["name"];
 
