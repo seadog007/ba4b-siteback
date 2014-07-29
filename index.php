@@ -30,7 +30,6 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-		<a href="https://github.com/ba4b"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-green@2x.png" alt="Fork me on GitHub"></a>
         <h1>巴哈頭像大改造<br>　　Better Avatar for Bahamut</h1>
         <p><h3 style="text-align:right;">一個連接Gravatar跟巴哈帳號的橋樑服務（瀏覽器插件）。</h3></p>
         <p><br>這是由一些非常閒的人所發起的計劃，<br>原因就只是因為巴哈的勇造太醜了…XD<br><br></p>
