@@ -14,6 +14,8 @@
 	
 	// Your bot account's bahamut ID | 你的訊息bot帳號的ID
 	define("BOT_ID","bahamut_id_here");
+    // Your bot account's bahamut nickname | 你的訊息bot帳號的暱稱
+	define("BOT_NICK","bahamut_nick_here");
 	// Bahamut session cookie (Get this from MB_BAHARUNE cookie) | 巴哈姆特的登入狀態cookie（請從MB_BAHARUNE這個cookie項目取得）
 	define("BOT_RUNE","bahamut_session_cookie_here");
 	
