@@ -38,7 +38,7 @@
         <div class="col-md-4">
         <center>
         <form action="a.php" method="post">
-        <input type="text" class="form-control" placeholder="您的巴哈帳號">
+        <input type="text" class="form-control" name="Name" placeholder="您的巴哈帳號">
         <br>
         <input type="submit" class="btn btn-primary" value="驗證">
       </center>
