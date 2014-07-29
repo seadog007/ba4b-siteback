@@ -17,9 +17,5 @@
                               ?>
       </ul>
     </div><!--/.nav-collapse -->
-  </div><a href="https://github.com/ba4b"><img style=
-  "position: absolute; top: 150; right: 0; border: 0; width: 149px; height: 149px;"
-  src=
-  "http://aral.github.com/fork-me-on-github-retina-ribbons/right-green@2x.png"
-  alt="Fork me on GitHub"></a>
+  </div>
 </div>
