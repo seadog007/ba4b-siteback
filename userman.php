@@ -49,7 +49,7 @@
           $result = @mysqli_query($con, $sql);
           $data = $result->fetch_array();
           if($data[0]==$hash&&$data[1]==1){
-            echo '<form action="sendmailverify.php" method="POST" onSubmit="return isEmail()"><input type="text" class="form-control" id="email" name="email" placeholder="您的E-mail位置"><input type="hidden" name="name" vaule="' . $name . '"><input type="hidden" name="hash" vaule="' . $hash . '"><br><input type="submit" class="btn btn-primary" id="verify" value="驗證">';
+            echo '<form action="sendmailverify.php" method="POST" onSubmit="return isEmail()"><input type="text" class="form-control" id="email" name="email" placeholder="您的E-mail位置"><input type="hidden" name="name" value="' . $name . '"><input type="hidden" name="hash" value="' . $hash . '"><br><input type="submit" class="btn btn-primary" id="verify" value="驗證">';
           }else{
             echo '<p>參數錯誤</p>';
           }
