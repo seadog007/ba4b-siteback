@@ -2,9 +2,9 @@
 <?php
 include "includes/sendmail.php";
 
-$email = isset($_GET["email"]) ? $_GET["email"] : "" ;
-$hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
-$name = isset($_GET["name"]) ? $_GET["name"] : "" ;
+$email = isset($_POST["email"]) ? $_POST["email"] : "" ;
+$hash = isset($_POST["hash"]) ? $_POST["hash"] : "" ;
+$name = isset($_POST["name"]) ? $_POST["name"] : "" ;
 $Time = time();
 $Exp = $Time + (60 * 60 * 2);
 $Time = date("Y-m-d H:i:s",$Time); 
@@ -21,7 +21,7 @@ if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)&&preg_match("/^\w+((-\w+)|(\.\w+))*\@
        	$sql = "INSERT INTO `emailverify` (`ID`, `BAHA_ID`, `EMAIL`, `EMAIL_HASH`, `TIME`, `EXPIRE_TIME`, `IP`, `verifycomplete`) VALUES (NULL, '" . $name . "', '" . $email . "', '" . $Ehash . "', '" . $Time . "', '" . $Exp . "', '" . $IP . "', '0');";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
-		if(pSendMail($Email,"BA4B服務驗證信",$Name . "你好，這裡是BA4B服務中心，<br>請進入網址：" . SYS_URL . "verify.php?mode=email&id=" . $Name . "&email=" . $email . "&hash=" . $Hash . "<br>來完成驗證…<br>BA4B團隊 各種感謝你XD") == 1) {
+		if(pSendMail($email,"BA4B服務驗證信",$name . "您好，這裡是BA4B服務中心，<br>請進入網址：" . SYS_URL . "verify.php?mode=email&id=" . $name . "&email=" . $email . "&hash=" . $Ehash . "<br>來完成驗證…<br>BA4B團隊 各種感謝你XD") == 1) {
 			echo '寄信成功，請至你的Email信箱檢查收信！' ;
 		}else{
 			echo '哭哭';
