@@ -19,6 +19,7 @@ if($mode=="baha"){
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			@mysqli_query($con, $sql);
+    			echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">驗證巴哈帳號成功，<br>即將跳轉到userman.php<meta http-equiv="refresh" content="5; url=userman.php">'
     		}
     	}else if($data[1]==1){
     		die("已驗證過");
