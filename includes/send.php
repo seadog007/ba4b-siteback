@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../config.php';
 
 //Send("收件人","主旨","內容","機器人暱稱");
 function Send($to,$sbj,$content,$BOT_Nick){

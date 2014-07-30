@@ -1,6 +1,6 @@
 <?php
 require("./phpmailer/class.phpmailer.php");
-include 'config.php';
+include '../config.php';
 
 function pSendMail($to,$sbj,$content){
     $mail = new PHPMailer();
