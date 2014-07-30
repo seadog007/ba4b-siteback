@@ -31,15 +31,15 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <p align="center" valign="center"><br>驗證您的E-mail帳號</p>
+        <p align="center" valign="center"><br>驗證您的E-mail位置</p>
 
         <br>
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
         <center>
-        <form action="sendemailverify.php" method="POST" onSubmit="return isEmail(document.getElementById("Name").value)">
-        <input type="text" class="form-control" id="Email" name="Email" placeholder="您的巴哈帳號">
+        <form action="sendmailverify.php" method="POST" onSubmit="return isEmail(document.getElementById("Name").value)">
+        <input type="text" class="form-control" id="Email" name="Email" placeholder="您的E-mail位置">
         <br>
         <input type="submit" class="btn btn-primary" id="verify" value="驗證">
       </center>

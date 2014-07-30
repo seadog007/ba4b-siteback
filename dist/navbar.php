@@ -16,7 +16,7 @@
                               }else if($page=="verify.php"){
                                 echo '<li><a href=".">Home</a></li><li><a href="use.php">立即使用</a></li><li class="active"><a>驗證巴哈帳號</a></li>';
                               }else if($page=="userman.php"){
-                                echo '<li><a href=".">Home</a></li><li><a href="use.php">立即使用</a></li><li class="active"><a>驗證E-mail</a></li>';
+                                echo '<li><a href=".">Home</a></li><li><a href="use.php">立即使用</a></li><li class="active"><a>驗證E-mail位置</a></li>';
                               }
                               ?>
       </ul>
