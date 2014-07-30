@@ -13,7 +13,7 @@
 	// System Settings - System related settings.
 	// 系統設定 - 系統相關設定。
     
-	// The root URL of this application. | 這個程式的根目錄的URL
+	// The root URL of this application. Include "http://"" and last "/". | 這個程式的根目錄的URL 包含"http://"跟最後的"/""
 	define("SYS_URL","URL_here");
     
 	// Message Bot Settings - This is the account used to send verification messages. (Please use bahamut mobile version.)
