@@ -56,8 +56,8 @@
         <div class="col-md-4">
             <h2><center>軟體授權</center></h2>
             <p>本程式所有部份皆採：<br>
-              <a href="http://www.gnu.org/licenses/gpl.html">GNU GPL version 3 (簡稱GPLv3)</a><br>
-              （GNU通用公共授權條款第3版）<br>
+              <a href="http://opensource.org/licenses/MIT">The MIT License</a><br>
+              （MIT 許可證）<br>
               授權，你可以依照授權條款來對本軟體修改、編輯、轉載…等<br>
               不過，我們更希望你可以前往<a href="https://github.com/ba4b">我們的GitHub專案</a><br>來進行改良、或是提出建議！</p>
         </div>
