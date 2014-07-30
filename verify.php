@@ -36,6 +36,7 @@ $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
 $IP = $_SERVER['REMOTE_ADDR'];
 $Time = time();
 $Time = date("Y-m-d H:i:s",$Time); 
+echo '<div class="jumbotron"><div class="container"><p>';
 if($mode=="baha"){
 	if($id!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "'";
@@ -47,11 +48,7 @@ if($mode=="baha"){
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			@mysqli_query($con, $sql);
-    			echo '<div class="jumbotron">
-    <div class="container">
-    <p>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><meta http-equiv="refresh" content="5; url=userman.php">
-    </div>
-    </div>';
+    			echo '驗證巴哈帳號成功，<br>即將跳轉到userman.php';
     			include "footer.php";
     		}
     	}else if($data[1]==1){
@@ -87,5 +84,7 @@ function firstlogin($id){
     }
 }
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</p><meta http-equiv="refresh" content="5; url=userman.php">
+    </div>
+    </div><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script></body></html>
