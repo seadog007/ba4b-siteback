@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-4">
         <center>
-        <form action="sendverify.php" method="POST" onSubmit="return checkform()">
+        <form action="./includes/sendverify.php" method="POST" onSubmit="return checkform()">
         <input type="text" class="form-control" id="Name" name="Name" placeholder="您的巴哈帳號">
         <br>
         <input type="submit" class="btn btn-primary" id="verify" value="驗證">
