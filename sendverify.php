@@ -3,6 +3,8 @@
 include "includes/send.php";
 
 $Name = $_POST["Name"];
+
+if(preg_match("/[a-zA-Z0-9]/",$Name)){
 $Time = time();
 $Exp = time() + (60 * 60 * 2);
 $Time = date("Y-m-d H:i:s",$Time); 
@@ -26,3 +28,8 @@ if (mysqli_connect_errno()) {
 	}
 }
 
+}else{
+    trigger_error('Don\'t try SQL Injection!');
+}
+
+?>

@@ -8,10 +8,10 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
-var isbaha = httpGet(window.location.origin + "/API/isbaha.php?name=" + document.getElementById("Name").value);
-
 function checkform(){
-	if(document.getElementById("Name").value.match("[a-zA-Z0-9]{1,12}") && isbaha == "1"){
+	var str = window.location.pathname;
+	var isbaha = httpGet(window.location.origin + str.replace("/use.php", "") + "/API/isbaha.php?name=" + document.getElementById("Name").value);
+	if(isbaha == "1"){
       	return true;
 	}else{
 		flash('#Name',8,10,100);
