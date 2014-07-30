@@ -7,9 +7,6 @@ $email = isset($_GET["email"]) ? $_GET["email"] : "" ;
 $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
 if($mode=="baha"){
 	if($id!=""&&$hash!=""){
-		echo $mode . "<br>";
-		echo $id . "<br>";
-		echo $hash . "<br>";
 		$sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $id . "'";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
@@ -24,10 +21,6 @@ if($mode=="baha"){
 	}
 }else if($mode=="email"){
 	if($id!=""&&$email!=""&&$hash!=""){
-		echo $mode . "<br>";
-		echo $id . "<br>";
-		echo $email . "<br>";
-		echo $hash . "<br>";
 		$sql = "SELECT `EMAIL_HASH`,`verifycomplete` FROM `emailverify` WHERE `BAHA_ID`='" . $id . "'";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
