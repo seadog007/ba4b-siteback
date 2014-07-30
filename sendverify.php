@@ -1,6 +1,22 @@
 <?php
 include "send.php";
-include "isbahamember.php";
+function isbahamember($user){
+$ch = curl_init("http://home.gamer.com.tw/homeindex.php?owner=".$user);
+curl_setopt($ch, CURLOPT_POSTFIELDS, "--__X_PAW_BOUNDARY__--\r\n");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+$result = curl_exec($ch);
+
+if ($result === FALSE){
+}else{
+	if(@preg_match("/巴哈姆特系統訊息/",$result)){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+curl_close($ch);
+}
 
 $Name = $_POST["Name"];
 if((@preg_match("/[^a-zA-Z0-9]/",$Name) || strlen($Name) >= 13 || $Name == "") && isbahamember($Name)){
