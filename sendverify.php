@@ -1,5 +1,6 @@
 <?php
 include "./includes/send.php";
+
 function isbahamember($user){
 $ch = curl_init("http://home.gamer.com.tw/homeindex.php?owner=".$user);
 curl_setopt($ch, CURLOPT_POSTFIELDS, "--__X_PAW_BOUNDARY__--\r\n");

@@ -1,6 +1,6 @@
 <?php
-require("./phpmailer/class.phpmailer.php");
-include '../config.php';
+require("./includes/phpmailer/class.phpmailer.php");
+include 'config.php';
 
 function pSendMail($to,$sbj,$content){
     $mail = new PHPMailer();
@@ -18,7 +18,7 @@ function pSendMail($to,$sbj,$content){
     $mail->IsHTML(true);
     
     $mail->AddAddress($to,'親愛der用戶');
-    $mail->AddReplyTo(SMTP_EMAIL,"Squall.f");
+    $mail->AddReplyTo(SMTP_EMAIL,SMTP_NICK);
     
     $mail->Subject = $sbj;
     $mail->Body = $content;
