@@ -19,12 +19,13 @@ function checkform(){
 	}
 }
 
-function isEmail(strEmail) {
-if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/)!= -1){
-return true;
-}else{}
-flash('#Email',8,10,100);
+function isEmail() {
+	if (document.getElementById("email").value.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/)!= -1){
+		return true;
+	}else{
+		flash('#email',8,10,100);
 		return false;
+	}
 }
 
 
