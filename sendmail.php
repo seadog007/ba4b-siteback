@@ -2,7 +2,7 @@
 require("./phpmailer/class.phpmailer.php");
 include 'config.php';
 
-function SendMail($to,$sbj,$content){
+function pSendMail($to,$sbj,$content){
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
