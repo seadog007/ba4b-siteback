@@ -4,7 +4,7 @@ include "includes/send.php";
 
 $Name = $_POST["Name"];
 
-if(preg_match("/[a-zA-Z0-9]/",$Name)){
+if(preg_match("/[a-zA-Z0-9]{1,12}/",$Name)){
 $Time = time();
 $Exp = time() + (60 * 60 * 2);
 $Time = date("Y-m-d H:i:s",$Time); 
