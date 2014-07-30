@@ -34,18 +34,19 @@ $result = curl_exec($ch);
 if ($result === FALSE)
 {
         echo "cURL Error: " . curl_error($ch);
+        return 0;
 }
  
 // Success
 else
 {
-        echo "Request completed: " . $result;
+        return 1;
 }
 
 curl_close($ch);
 }
 
 function SendS($to,$sbj,$content){
-    Send($to,$sbj,$content, BOT_NICK);
+    return Send($to,$sbj,$content, BOT_NICK);
 }
 ?>
