@@ -1,11 +1,33 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>巴哈頭像大改造 | Better Avatar for Bahamut</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
 <?php
 include "config.php";
 $page="verify.php";
 include "navbar.php";
-echo '<link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="jumbotron.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>';
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
 $id = isset($_GET["id"]) ? $_GET["id"] : "" ;
@@ -27,7 +49,7 @@ if($mode=="baha"){
     			@mysqli_query($con, $sql);
     			echo '<div class="jumbotron">
     <div class="container">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><p>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><meta http-equiv="refresh" content="5; url=userman.php">
+    <p>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><meta http-equiv="refresh" content="5; url=userman.php">
     </div>
     </div>';
     			include "footer.php";
@@ -65,3 +87,5 @@ function firstlogin($id){
     }
 }
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script></body>
