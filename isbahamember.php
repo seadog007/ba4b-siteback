@@ -8,9 +8,9 @@ $result = curl_exec($ch);
 if ($result === FALSE){
 }else{
 	if(@preg_match("/巴哈姆特系統訊息/",$result)){
-		return false;
+		return false
 	}else{
-		return true;
+		return true
 	}
 }
 
