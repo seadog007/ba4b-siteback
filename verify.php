@@ -1,5 +1,11 @@
 <?php
 include "config.php";
+$page="verify.php";
+include "navbar.php";
+echo '<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>';
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
 $id = isset($_GET["id"]) ? $_GET["id"] : "" ;
@@ -19,13 +25,11 @@ if($mode=="baha"){
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			@mysqli_query($con, $sql);
-    			$page="verify.php";
-    			include "navbar.php";
     			echo '<div class="jumbotron">
-      					<div class="container">
-        				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><p>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><meta http-equiv="refresh" content="5; url=userman.php">
-      					</div>
-    					</div>'
+    <div class="container">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><p>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><meta http-equiv="refresh" content="5; url=userman.php">
+    </div>
+    </div>';
     			include "footer.php";
     		}
     	}else if($data[1]==1){
