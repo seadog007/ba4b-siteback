@@ -13,6 +13,7 @@ function pSendMail($to,$sbj,$content){
     $mail->Port = SMTP_PORT;  
     $mail->From = SMTP_EMAIL;
     $mail->FromName = SMTP_NICK;    
+    $mail->CharSet = "utf-8";
     
     $mail->IsHTML(true);
     
