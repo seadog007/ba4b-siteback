@@ -28,7 +28,7 @@
 <?php
 include "config.php";
 $page="verify.php";
-include "navbar.php";
+include "dist/navbar.php";
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
 $id = isset($_GET["id"]) ? $_GET["id"] : "" ;

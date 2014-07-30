@@ -27,7 +27,7 @@
 
   <body>
 
-    <?php $page="use.php"; include "./dist/navbar.php" ?>
+    <?php $page="use.php"; include "dist/navbar.php" ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -48,7 +48,7 @@
       </div>
     </div>
       <hr>
-      <?php include "./dist/footer.php"?>
+      <?php include "dist/footer.php"?>
     </div>
 
     <!-- Bootstrap core JavaScript
