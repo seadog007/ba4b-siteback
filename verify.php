@@ -10,12 +10,14 @@ if($mode=="baha"){
 		echo $mode . "<br>";
 		echo $id . "<br>";
 		echo $hash . "<br>";
-		$sql = "SELECT `BAHA_HASH` FROM `verify` WHERE `BAHA_ID`='" . $id . "'";
+		$sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $id . "'";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
-    	if($data[0]==$hash){
+    	if($data[0]==$hash&&$data[1]==0){
     		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_ID`='" . $id . "'";
     		$result = @mysqli_query($con, $sql);
+    	}else if($data[1]==1){
+    		die("已驗證過");
     	}else{
     		die("錯誤");
     	}
@@ -26,12 +28,14 @@ if($mode=="baha"){
 		echo $id . "<br>";
 		echo $email . "<br>";
 		echo $hash . "<br>";
-		$sql = "SELECT `EMAIL_HASH` FROM `emailverify` WHERE `BAHA_ID`='" . $id . "'";
+		$sql = "SELECT `EMAIL_HASH`,`verifycomplete` FROM `emailverify` WHERE `BAHA_ID`='" . $id . "'";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
-    	if($data[0]==$hash){
+    	if($data[0]==$hash&&$data[1]==0){
     		$sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `BAHA_ID`='" . $id . "'";
     		$result = @mysqli_query($con, $sql);
+    	}else if($data[1]==1){
+    		die("已驗證過");
     	}else{
     		die("錯誤");
     	}
