@@ -46,6 +46,6 @@ curl_close($ch);
 }
 
 function SendS($to,$sbj,$content){
-    Send($to,$sbj,$content, BOT_NICK)
+    Send($to,$sbj,$content, BOT_NICK);
 }
 ?>
