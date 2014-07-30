@@ -16,6 +16,23 @@
 	// The root URL of this application. Include "http://"" and last "/". | 這個程式的根目錄的URL 包含"http://"跟最後的"/""
 	define("SYS_URL","URL_here");
     
+    // Message Email Settings - The email account used to send verification messages.
+    // Email設定 - 這個Email帳號會被用來傳送確認訊息。
+    
+    // SMTP Server Address | SMTP伺服器位址
+    define("SMTP_HOST","smtp_host_here");
+    // SMTP Server Port | SMTP伺服器通訊port
+    define("SMTP_PORT","smtp_port_here");
+    // SMTP Username (If you use gmail, then it's your email address) | SMTP使用者帳號（Gmail的話是Email位址）
+    define("SMTP_USER","smtp_username_here");
+    // SMTP Password | SMTP密碼
+    define("SMTP_PASS","smtp_password_here");
+    // Email Address used to send message | 送信用的Email位址
+    define("SMTP_EMAIL","email_address_here");
+    // Email Nickname | 送信者的暱稱
+    define("SMTP_NICK","sender_nickname_here");
+    
+    
 	// Message Bot Settings - This is the account used to send verification messages. (Please use bahamut mobile version.)
 	// 訊息bot設定 - 這個帳號會被用來傳送確認訊息。 （請使用手機版本的巴哈姆特）
 	
