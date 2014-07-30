@@ -21,6 +21,6 @@ if((@preg_match("/[^a-zA-Z0-9]/",$Name) || strlen($Name) >= 13 || $Name == "") &
 		$sql="INSERT INTO `verify` (`ID`, `BAHA_ID`, `HASH`, `TIME`, `EXPIRE_TIME`) VALUES (NULL, '" . $Name . "', '" . $Hash . "', '" . $Time . "', '" . $Exp . "');";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
-		send($Name,"主旨","請進入" . SYS_URL . "verify.php?hash=" . $Hash);
+		send($Name,"主旨","請進入" . SYS_URL . "verify.php?mode=baha&id=" . $Name . "&hash=" . $Hash);
     //}
 //}
