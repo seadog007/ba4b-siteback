@@ -16,7 +16,5 @@ if($mode=="baha"){
 		echo $email . "<br>";
 		echo $hash . "<br>";
 	}
-}else{
-	die("0");
 }
 ?>
