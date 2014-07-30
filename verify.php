@@ -36,7 +36,7 @@ $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
 $IP = $_SERVER['REMOTE_ADDR'];
 $Time = time();
 $Time = date("Y-m-d H:i:s",$Time); 
-echo '<div class="jumbotron"><div class="container"><p>';
+echo '<div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>';
 if($mode=="baha"){
 	if($id!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "'";
@@ -83,8 +83,7 @@ function firstlogin($id){
     	return false;
     }
 }
-?>
-</p><meta http-equiv="refresh" content="5; url=userman.php">
+?></p><meta http-equiv="refresh" content="5; url=userman.php">
     </div>
     </div><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script></body></html>
