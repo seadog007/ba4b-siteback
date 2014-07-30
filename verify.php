@@ -4,14 +4,18 @@ $id = isset($_GET["id"]) ? $_GET["id"] : "" ;
 $email = isset($_GET["email"]) ? $_GET["email"] : "" ;
 $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
 if($mode=="baha"){
-echo $mode . "/n";
-echo $id . "/n";
-echo $hash . "/n";
+	if($id!=""&&$hash!=""){
+		echo $mode . "<br>";
+		echo $id . "<br>";
+		echo $hash . "<br>";
+	}
 }else if($mode=="email"){
-echo $mode . "/n";
-echo $id . "/n";
-echo $email . "/n";
-echo $hash . "/n";
+	if($id!=""&&$email!=""&&$hash!=""){
+		echo $mode . "<br>";
+		echo $id . "<br>";
+		echo $email . "<br>";
+		echo $hash . "<br>";
+	}
 }else{
 	die("0");
 }
