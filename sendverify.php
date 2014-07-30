@@ -19,7 +19,7 @@ curl_close($ch);
 }
 
 $Name = $_POST["Name"];
-if((@preg_match("/[^a-zA-Z0-9]/",$Name) || strlen($Name) >= 13 || $Name == "") && isbahamember($Name)){
+if((@preg_match("/[^a-zA-Z0-9]/",$Name) || strlen($Name) >= 13 || $Name == "") && !isbahamember($Name)){
 	die("0");
 }//else{
 	$Time = time();
