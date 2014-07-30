@@ -22,6 +22,6 @@ if((@preg_match("/[^a-zA-Z0-9]/",$Name) || strlen($Name) >= 13 || $Name == "") &
 		$sql = "INSERT INTO `verify` (`ID`, `BAHA_ID`, `BAHA_HASH`, `TIME`, `EXPIRE_TIME`, `IP`, `verifycomplete`) VALUES (NULL, '" . $Name . "', '" . $Hash . "', '" . $Time . "', '" . $Exp . "', '" . $IP . "', '0');";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
-		SendS($Name,"BA4B服務驗證信","你好，這裡是BA4B服務中心，%0D%0A請進入網址：" . SYS_URL . "verify.php?mode=baha&id=" . $Name . "&hash=" . $Hash . "%0D%0A來完成驗證…%0D%0ABA4B團隊 各種感謝你XD");
+		SendS($Name,"BA4B服務驗證信","你好，這裡是BA4B服務中心，\n請進入網址：" . SYS_URL . "verify.php?mode=baha&id=" . $Name . "&hash=" . $Hash . "\n來完成驗證…\nBA4B團隊 各種感謝你XD");
     //}
 //}
