@@ -50,7 +50,7 @@ if($mode=="baha"){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			@mysqli_query($con, $sql);
     			echo '驗證巴哈帳號成功，<br>即將跳轉到userman.php';
-    			include "footer.php";
+    			include "dist/footer.php";
     		}
     	}else if($data[1]==1){
     		die("已驗證過");
