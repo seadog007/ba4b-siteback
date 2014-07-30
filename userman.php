@@ -38,10 +38,23 @@
         </div>
         <div class="col-md-4">
         <center>
-        <form action="sendmailverify.php" method="POST" onSubmit="return isEmail(document.getElementById("Name").value)">
-        <input type="text" class="form-control" id="Email" name="Email" placeholder="您的E-mail位置">
-        <br>
-        <input type="submit" class="btn btn-primary" id="verify" value="驗證">
+        <?php
+        include "config.php";
+
+        $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
+        $name = isset($_GET["name"]) ? $_GET["name"] : "" ;
+        if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)){
+          $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
+          $sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $name . "'";
+          $result = @mysqli_query($con, $sql);
+          $data = $result->fetch_array();
+          if($data[0]==$hash&&$data[1]==1){
+            echo '<form action="sendmailverify.php" method="POST" onSubmit="return isEmail(document.getElementById("Name").value)"><input type="text" class="form-control" id="Email" name="Email" placeholder="您的E-mail位置"><input type="hidden" name="Name" vaule="' . $name . '"><input type="hidden" name="Hash" vaule="' . $hash . '"><br><input type="submit" class="btn btn-primary" id="verify" value="驗證">';
+          }else{
+            echo '<p>參數錯誤</p>';
+          }
+        }
+        ?>
       </center>
       </form>
         </div>
