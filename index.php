@@ -32,7 +32,7 @@
 	    document.location.href = "http://killie.tw/";
 	  </script>
     <![endif]-->
-    <?php $page="index.php"; include "navbar.php" ?>
+    <?php $page="index.php"; include "./dist/navbar.php" ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -65,7 +65,7 @@
       </div>
 <br><br>
       <hr>
-      <?php include "footer.php" ?>
+      <?php include "./dist/footer.php" ?>
     </div>
 
     <!-- Bootstrap core JavaScript
