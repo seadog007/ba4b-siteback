@@ -11,7 +11,7 @@ if((@preg_match("/[^a-zA-Z0-9]/",$Name) || strlen($Name) >= 13 || $Name == "") &
 	$Time = date("Y-m-d H:i:s",$Time); 
 	$Exp = date("Y-m-d H:i:s",$Exp); 
 	$Hash = md5(md5($Time . $Name));
-	echo $Name . "<br>" . $Time . "<br>" . $Exp . "<br>" . $Hash;
+	//echo $Name . "<br>" . $Time . "<br>" . $Exp . "<br>" . $Hash;
 
 	$con=@mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME) or print("Failed to connect to MySQL: " . mysqli_connect_error());
 	                                                         // Check connection
