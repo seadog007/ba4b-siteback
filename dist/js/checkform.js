@@ -8,7 +8,7 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
-var isbaha = httpGet(window.location.pathname + "/API/isbaha.php?name=" + document.getElementById("Name"));
+var isbaha = httpGet(window.location.origin + "/API/isbaha.php?name=" + document.getElementById("Name"));
 
 function checkform(){
 	if(document.getElementById("Name").value.match("[a-zA-Z0-9]{1,12}") && isbaha == "1"){
