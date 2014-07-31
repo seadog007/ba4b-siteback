@@ -41,3 +41,4 @@ config.php
 testsend.php
 phpinfo.php
 testsendmail.php
+gitpull.bat
