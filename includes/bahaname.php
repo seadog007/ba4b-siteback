@@ -1,4 +1,5 @@
 <?php
+
 function getbahaname($user){
   	$chh = curl_init("http://home.gamer.com.tw/homeindex.php?owner=" . $user);
 	curl_setopt($chh, CURLOPT_POSTFIELDS, "--__X_PAW_BOUNDARY__--\r\n");
@@ -10,10 +11,11 @@ function getbahaname($user){
   		if(preg_match_all('/<span class="TS2">.+<\/span>/',$res,$match)){
     		preg_replace('/<span class="TS2">/','',$match[0][1]);
     		preg_replace('/<\/span>/','',$match[0][1]);
-    	  return $match[0][1];
+    	  	return $match[0][1];
 		}else{
 			return "N/A";
 		}
 	}
 }
+
 ?>
