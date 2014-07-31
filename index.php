@@ -40,20 +40,22 @@
         <h1>巴哈頭像大改造<br>　　Better Avatar for Bahamut</h1>
         <p><h3 style="text-align:right;">一個連接Gravatar跟巴哈帳號的橋樑服務（瀏覽器插件）。</h3></p>
         <p><br>這是由一些非常閒的人所發起的計劃，<br>原因就只是因為巴哈的勇造太醜了…XD</p>
-        <a href="use.php"><p class="btn btn-success btn-lg" data-toggle="modal" data-target="#basicModal">立即使用！ &raquo;</p></a>
+			<div class="btn-group">
+				<a href="use.php"><button class="btn btn-success btn-lg" type="button" style="padding: 14px 18px;font-size: 30px;">立即使用！ »</button></a>
+			</div>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-            <center><h2>效果介紹</h2></center>
+            <center><a href="#"><button class="btn btn-primary btn-lg" type="button" style="padding: 8px 16px;font-size: 26px;">效果介紹</button></a></center>
         </div>
         <div class="col-md-4">
-            <center><h2>如何使用</h2></center>
+            <center><a href="#"><button class="btn btn-info btn-lg" type="button" style="padding: 8px 16px;font-size: 26px;">如何使用</button></a></center>
         </div>
         <div class="col-md-4">
-            <center><h2>軟體授權</h2></center>
+            <center><a href="#"><button class="btn btn-default btn-lg" type="button" style="padding: 8px 16px;font-size: 26px;">軟體授權</button></a></center>
             <p><br>本程式所有部份皆採：<br>
               <a href="http://opensource.org/licenses/MIT">The MIT License</a><br>
               （MIT 許可證）<br>
