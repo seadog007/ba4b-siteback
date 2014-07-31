@@ -32,7 +32,6 @@ function sub(){
 document.getElementById('verify').value="傳送中...";
 document.getElementById('verify').disabled="disabled";
 var name = document.getElementById('Name').value;
-document.getElementById('verify').value="傳送中......";
 $.ajax({
   type: 'POST',
   url: "sendverify.php",
@@ -52,7 +51,6 @@ document.getElementById('verify').disabled="disabled";
 var name = document.getElementById('name').value;
 var hash = document.getElementById('hash').value;
 var email = document.getElementById('email').value;
-document.getElementById('verify').value="傳送中......";
 $.ajax({
   type: 'POST',
   url: "sendmailverify.php",
