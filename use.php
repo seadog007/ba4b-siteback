@@ -34,7 +34,7 @@
         <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">
           <p><br>驗證您的巴哈帳號</p>
           <br>
-          <form action="javascript:$("#verify").button('傳送中....');sub(document.getElementById('Name').value)" method="POST" onSubmit="return checkform()">
+          <form action="javascript:loading()" method="POST" onSubmit="return checkform()">
             <input type="text" class="form-control" id="Name" name="Name" placeholder="您的巴哈帳號">
             <br>
             <input type="submit" class="btn btn-primary" id="verify" value="立即驗證">
