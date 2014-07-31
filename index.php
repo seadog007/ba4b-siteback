@@ -41,7 +41,7 @@
         <p><h3 style="text-align:right;">一個連接Gravatar跟巴哈帳號的橋樑服務（瀏覽器插件）。</h3></p>
         <p><br>這是由一些非常閒的人所發起的計劃，<br>原因就只是因為巴哈的勇造太醜了…XD</p>
 			<div class="btn-group">
-				<a href="use.php"><button class="btn btn-success btn-lg" type="button" style="padding: 14px 18px;font-size: 30px;">立即使用！ »</button></a>
+				<a href="use.php"><button class="btn btn-success btn-lg" type="button">立即使用！ »</button></a>
 			</div>
       </div>
     </div>
@@ -49,18 +49,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-            <center><a href="#"><button class="btn btn-primary btn-lg" type="button" style="padding: 8px 16px;font-size: 26px;">效果介紹</button></a></center>
+            <center><h2>效果介紹</h2></center>
+            <a class="btn btn-default" href="#" role="button">看更多 »</a>
         </div>
         <div class="col-md-4">
-            <center><a href="#"><button class="btn btn-info btn-lg" type="button" style="padding: 8px 16px;font-size: 26px;">如何使用</button></a></center>
+            <center><h2>如何使用</h2></center>
+            <a class="btn btn-default" href="#" role="button">看更多 »</a>
         </div>
         <div class="col-md-4">
-            <center><a href="#"><button class="btn btn-default btn-lg" type="button" style="padding: 8px 16px;font-size: 26px;">軟體授權</button></a></center>
+            <center><h2>軟體授權</h2></center>
             <p><br>本程式所有部份皆採：<br>
               <a href="http://opensource.org/licenses/MIT">The MIT License</a><br>
               （MIT 許可證）<br>
               授權，你可以依照授權條款來對本軟體修改、編輯、轉載…等<br>
               不過，我們更希望你可以前往<a href="https://github.com/ba4b">我們的GitHub專案</a><br>來進行改良、或是提出建議！</p>
+              <a class="btn btn-default" href="#" role="button">看更多 »</a>
         </div>
 
       </div>
