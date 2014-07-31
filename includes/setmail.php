@@ -5,6 +5,7 @@ function updatamail($id,$email,$ip){
 	$Time = time();
 	$Time = date("Y-m-d H:i:s",$Time); 
 	$sql = "UPDATE  `list` SET  `BAHA_NAME` = '" . getbahaname($id) . "',`EMAIL` =  '" . $email . "',`HASHED_MAIL` =  '" . $hashmail . "',`MODIFY_IP` =  '" . $ip . "',`MODIFY_IP` = '" . $Time . " WHERE `BAHA_ID`='" . $id . "'";
+	echo $sql;
 	@mysqli_query($con, $sql);
 	return true;
 }
