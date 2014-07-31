@@ -1,6 +1,6 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <?php
 include "includes/sendmail.php";
+include "API/bahaname.php";
 
 $email = isset($_POST["email"]) ? $_POST["email"] : "" ;
 $hash = isset($_POST["hash"]) ? $_POST["hash"] : "" ;
