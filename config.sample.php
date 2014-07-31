@@ -27,6 +27,8 @@
     define("SMTP_USER","smtp_username_here");
     // SMTP Password | SMTP密碼
     define("SMTP_PASS","smtp_password_here");
+    // SMTP Secure Method ('tls' or 'ssl') | SMTP安全方法('tls'或'ssl')
+    define("SMTP_SEME","smtp_secure_method_here");
     // Email Address used to send message | 送信用的Email位址
     define("SMTP_EMAIL","email_address_here");
     // Email Nickname | 送信者的暱稱

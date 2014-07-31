@@ -6,7 +6,7 @@ function pSendMail($to,$sbj,$content){
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = SMTP_SEME;
     $mail->Username = SMTP_USER;
     $mail->Password = SMTP_PASS;
     $mail->Host = SMTP_HOST;      
