@@ -22,7 +22,7 @@ if (mysqli_connect_errno()) {
 	mysqli_query($con,$sql);
 	mysqli_close($con);
 	if(SendS($Name,"BA4B服務驗證信",$Name . "你好，這裡是BA4B服務中心，\r\n請進入網址：" . SYS_URL . "verify.php?mode=baha&id=" . $Name . "&hash=" . $Hash . "\r\n來完成驗證…\r\nBA4B團隊 各種感謝你XD") == 1) {
-		echo '寄信成功，請至你的<a href="http://mailbox.gamer.com.tw/">巴哈站內信</a>檢查收信！<br>即將在五秒鐘內自動跳轉…<meta http-equiv="refresh" content="5; url=http://mailbox.gamer.com.tw/">' ;
+		echo '寄信成功，請至你的<a href="http://mailbox.gamer.com.tw/">巴哈站內信</a>檢查收信！' ;
 	}else{
 		echo '哭哭';
 	}
