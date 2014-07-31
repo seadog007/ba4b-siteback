@@ -29,6 +29,8 @@ function isEmail() {
 }
 
 function sub(){
+document.getElementById('verify').value="傳送中...";
+document.getElementById('verify').disabled="disabled";
 var name = document.getElementById('Name').value;
 $.ajax({
   type: 'POST',
