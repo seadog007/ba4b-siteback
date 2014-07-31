@@ -46,15 +46,77 @@
       </div>
     </div>
 
+
+
+<div class="modal fade" id="D1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="D2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="D2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <div class="container">
       <div class="row">
         <div class="col-md-4">
             <center><h2>效果介紹</h2></center>
-            <a class="btn btn-default" href="#" role="button">看更多 »</a>
+            <button class="btn btn-default" data-toggle="modal" data-target="#D1">
+            看更多 »
+            </button>
         </div>
         <div class="col-md-4">
             <center><h2>如何使用</h2></center>
-            <a class="btn btn-default" href="#" role="button">看更多 »</a>
+            <button class="btn btn-default" data-toggle="modal" data-target="#D2">
+            看更多 »
+            </button>
         </div>
         <div class="col-md-4">
             <center><h2>軟體授權</h2></center>
@@ -63,9 +125,11 @@
               （MIT 許可證）<br>
               授權，你可以依照授權條款來對本軟體修改、編輯、轉載…等<br>
               不過，我們更希望你可以前往<a href="https://github.com/ba4b">我們的GitHub專案</a><br>來進行改良、或是提出建議！</p>
-              <a class="btn btn-default" href="#" role="button">看更多 »</a>
+              <button class="btn btn-default" data-toggle="modal" data-target="#D3">
+              看更多 »
+              </button>
         </div>
-
+        
       </div>
 <br><br>
       <hr>
