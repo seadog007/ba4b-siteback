@@ -47,13 +47,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-            <center><h2 class="btn btn-primary btn-lg" data-toggle="modal" data-target="#basicModal">效果介紹</h2></center>
+            <center><h2>效果介紹</h2></center>
         </div>
         <div class="col-md-4">
-            <center><h2 class="btn btn-primary btn-lg" data-toggle="modal" data-target="#basicModal">如何使用</h2></center>
+            <center><h2>如何使用</h2></center>
         </div>
         <div class="col-md-4">
-            <center><h1 class="btn btn-primary btn-lg" data-toggle="modal" data-target="#basicModal">軟體授權</h2></center>
+            <center><h2>軟體授權</h2></center>
             <p><br>本程式所有部份皆採：<br>
               <a href="http://opensource.org/licenses/MIT">The MIT License</a><br>
               （MIT 許可證）<br>
