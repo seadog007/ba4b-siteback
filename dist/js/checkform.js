@@ -12,10 +12,6 @@ function checkform(){
 	var str = window.location.pathname;
 	var isbaha = httpGet(window.location.origin + str.replace("/use.php", "") + "/API/isbaha.php?name=" + document.getElementById("Name").value);
 	if(isbaha == "1"){
-        //var btn = $('#verify');
-        //btn.button('傳送中...');
-      	document.getElementById('verify').disabled="disabled"
-        document.getElementById('verify').value="傳送中..."
         return true;
 	}else{
 		flash('#Name',8,10,100);
@@ -33,6 +29,8 @@ function isEmail() {
 }
 
 function sub(){
+document.getElementById('verify').disabled="disabled"
+document.getElementById('verify').value="傳送中..."
 var name = document.getElementById('Name').value;
 $.ajax({
   type: 'POST',
@@ -48,6 +46,8 @@ $(".f2").stop(true,false).animate({right:'0px',opacity: 1});
 }
 
 function sub2(){
+document.getElementById('verify').disabled="disabled"
+document.getElementById('verify').value="傳送中..."
 var name = document.getElementById('name').value;
 var hash = document.getElementById('hash').value;
 var email = document.getElementById('email').value;
