@@ -31,14 +31,14 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <p id="content" align="center" valign="center"><br>驗證您的巴哈帳號</p>
+        <p class="f1" align="center" valign="center"><br>驗證您的巴哈帳號</p>
 
         <br>
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
         <center>
-        <form action="sendverify.php" method="POST" onSubmit="return checkform()">
+        <form class="f1" action="sendverify.php" method="POST" onSubmit="return checkform()">
         <input type="text" class="form-control" id="Name" name="Name" placeholder="您的巴哈帳號">
         <br>
         <input type="submit" class="btn btn-primary" id="verify" value="驗證">
