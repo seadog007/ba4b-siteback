@@ -68,9 +68,6 @@ if($mode=="baha"){
     	}else if($data[0]==$id&&$data[1]==1&&$data2[0]==0&&$left_time>=0){
     		echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else if(($data[0]==$id&&$data[1]==1&&$data2[0]==1)||$left_time<0){
-            print_r($data);
-            print_r($data2);
-            print_r($left_time);
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
     		echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
