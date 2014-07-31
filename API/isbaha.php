@@ -7,10 +7,10 @@ $result = curl_exec($ch);
 curl_close($ch);
 if ($result === FALSE){
 }else{
-	if(@preg_match("/巴哈姆特系統訊息/",$result)||$user==""){
-		return 0;
+	if(@preg_match("/<span class="TS2">.{1,}<\/span>/",$result,$matches)||$user==""){
+		echo $matches;
 	}else{
-		return 1;
+		return "N/A";
 	}
 }
 
