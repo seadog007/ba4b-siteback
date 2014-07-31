@@ -51,6 +51,11 @@ if($mode=="baha"){
 		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by 1 desc";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
+
+        $sql = "SELECT `verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $id . "' order by 1 desc";
+        $result = @mysqli_query($con, $sql);
+        $data2 = $result->fetch_array();
+
     	if($data[0]==$id&&$data[1]==0){
     		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "'";
     		mysqli_query($con, $sql);
@@ -59,9 +64,11 @@ if($mode=="baha"){
     			mysqli_query($con, $sql);
     		}
             echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
-    	}else if($data[0]==$id&&$data[1]==1){
-    		echo '<p><br><br>已驗證過，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
-    	}else{
+    	}else if($data[0]==$id&&$data[1]==1&&data2[0]==0){
+    		echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+    	}else if($data[0]==$id&&$data[1]==1&&data2[0]==1){
+            echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+        }else{
     		echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
     	}
 	}
