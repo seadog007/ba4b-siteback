@@ -29,7 +29,7 @@
 
 <?php
 include "config.php";
-include "setmail.php";
+include "includes/setmail.php";
 include "includes/bahaname.php";
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 $con->query("SET NAMES utf8");
