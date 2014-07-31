@@ -1,4 +1,32 @@
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>巴哈頭像大改造 | Better Avatar for Bahamut</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template 
+    <link href="jumbotron.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
 <?php
 include "config.php";
 include "setmail.php";
@@ -12,6 +40,11 @@ $Time = time();
 $Time = date("Y-m-d H:i:s",$Time); 
 
 if($mode=="baha"){
+    $page="verify.php?baha"; 
+    include "dist/navbar.php";
+    echo '<div class="jumbotron" style="height:300px">
+      <div class="container">
+        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">';
 	if($id!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by 1 desc";
     	$result = @mysqli_query($con, $sql);
@@ -22,18 +55,20 @@ if($mode=="baha"){
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			@mysqli_query($con, $sql);
-    			echo '<meta http-equiv="refresh" content="5; url=userman.php?name=' . $id . '&hash=' . $hash . '"></head><body>';
-                echo '<div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php';
+                echo '驗證巴哈帳號成功，<br>即將跳轉到userman.php<script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\',10000);</script>';
     		}
     	}else if($data[1]==1){
-    		echo '<meta http-equiv="refresh" content="5; url=index.php"></head><body><div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>已驗證過';
+    		echo '已驗證過，<br>即將跳轉回首頁<script>setTimeout("location.href=\'index.php\',10000);</script>';
     	}else{
-    		echo '<meta http-equiv="refresh" content="5; url=index.php"></head><body><div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>錯誤';
+    		echo '錯誤，<br>即將跳轉回首頁<script>setTimeout("location.href=\'index.php\',10000);</script>';
     	}
-        include "dist/footer.php";
 	}
 }else if($mode=="email"){
-    echo '<div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>';
+    $page="verify.php?email";
+    include "dist/navbar.php";
+    echo '<div class="jumbotron" style="height:300px">
+      <div class="container">
+        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">';
 	if($id!=""&&$email!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by 1 desc";
         $result = @mysqli_query($con, $sql);
@@ -43,12 +78,12 @@ if($mode=="baha"){
             @mysqli_query($con, $sql);
             if(firstlogin($id)){
                 updatamail($id,$email,$IP);
-                echo '<meta http-equiv="refresh" content="5; url=index.php"></head><body>驗證Email帳號成功，<br>即將跳轉回首頁';
+                echo '驗證Email帳號成功，<br>即將跳轉回首頁<script>setTimeout("location.href=\'index.php\',10000);</script>';
             }
         }else if($data[2]==1){
-            echo '<meta http-equiv="refresh" content="5; url=index.php"></head><body><div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>已驗證過';
+            echo '已驗證過，<br>即將跳轉回首頁<script>setTimeout("location.href=\'index.php\',10000);</script>';
         }else{
-            echo '<meta http-equiv="refresh" content="5; url=index.php"></head><body><div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>錯誤';
+            echo '錯誤，<br>即將跳轉回首頁<script>setTimeout("location.href=\'index.php\',10000);</script>';
         }
 	}
 }
@@ -64,3 +99,18 @@ function firstlogin($id){
     }
 }
 ?>
+</div>
+<hr>
+      <?php include "dist/footer.php" ?>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/shake.js"></script>
+    <script src="dist/js/checkform.js"></script>
+  </body>
+</html>
+
