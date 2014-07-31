@@ -42,7 +42,8 @@ $.ajax({
   async:false
 });
 $(".f1").stop(true,false).animate({left:'-=500px',opacity: 0});
-$(".f2").animate({right:'0px',opacity: 1});
+$(".f2").stop(true,false).animate({right:'0px',opacity: 1});
+return 1;
 }
 
 
