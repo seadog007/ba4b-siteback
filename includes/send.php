@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-
+include 'includes/bahaname.php';
 //Send("收件人","主旨","內容","機器人暱稱");
 function Send($to,$sbj,$content,$BOT_Nick){
 // Request: My API (http://mailbox.gamer.com.tw/m/send2.php)
@@ -47,6 +47,6 @@ curl_close($ch);
 }
 
 function SendS($to,$sbj,$content){
-    return Send($to,$sbj,$content, BOT_NICK);
+    return Send($to,$sbj,$content, getbahamembername($Name));
 }
 ?>
