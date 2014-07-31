@@ -1,5 +1,4 @@
 <?php
-echo "";
 function getbahaname($userid){
   	$chh = curl_init("http://home.gamer.com.tw/homeindex.php?owner=" . $userid);
 	curl_setopt($chh, CURLOPT_RETURNTRANSFER, TRUE);
