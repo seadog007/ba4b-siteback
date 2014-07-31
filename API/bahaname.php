@@ -11,6 +11,7 @@ if ($result === FALSE){
   	echo $matches[0][1];
     preg_replace('/<span class="TS2">/','',$matches[0][1]);
     preg_replace('/<\/span>/','',$matches[0][1]);
+    	return $matches[0][1];
 	}else{
 		return "N/A";
 	}
