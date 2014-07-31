@@ -42,7 +42,7 @@ if($mode=="baha"){
             $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "'";
             @mysqli_query($con, $sql);
             if(firstlogin($id)){
-                updatamail($id,$mail,$IP);
+                updatamail($id,$email,$IP);
                 echo '<meta http-equiv="refresh" content="5; url=index.php"></head><body>驗證Email帳號成功，<br>即將跳轉回首頁';
             }
         }else if($data[2]==1){
