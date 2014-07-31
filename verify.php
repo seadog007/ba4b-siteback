@@ -26,8 +26,6 @@
   
 <?php
 include "config.php";
-$page="verify.php";
-include "dist/navbar.php";
 include "setmail.php";
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
@@ -39,6 +37,8 @@ $Time = time();
 $Time = date("Y-m-d H:i:s",$Time); 
 echo '<div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>';
 if($mode=="baha"){
+    $page="verify.php?baha";
+    include "dist/navbar.php";
 	if($id!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "'";
     	$result = @mysqli_query($con, $sql);
@@ -59,6 +59,8 @@ if($mode=="baha"){
     	}
 	}
 }else if($mode=="email"){
+    $page="verify.php?email";
+    include "dist/navbar.php";
 	if($id!=""&&$email!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "'";
         $result = @mysqli_query($con, $sql);
