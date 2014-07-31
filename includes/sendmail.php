@@ -7,16 +7,18 @@ function pSendMail($to,$sbj,$content){
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = SMTP_SEME;
-    $mail->Username = SMTP_USER;
-    $mail->Password = SMTP_PASS;
     $mail->Host = SMTP_HOST;      
     $mail->Port = SMTP_PORT;  
-    $mail->From = SMTP_EMAIL;
-    $mail->FromName = SMTP_NICK;    
+    $mail->Username = SMTP_USER;
+    $mail->Password = SMTP_PASS;
+   
     $mail->CharSet = "utf-8";
     
     $mail->IsHTML(true);
+    $mail->WordWrap = 50;
     
+    $mail->From = SMTP_EMAIL;
+    $mail->FromName = SMTP_NICK; 
     $mail->AddAddress($to,'親愛der用戶');
     $mail->AddReplyTo(SMTP_EMAIL,SMTP_NICK);
     
