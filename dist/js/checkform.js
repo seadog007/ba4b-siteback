@@ -29,6 +29,7 @@ function isEmail() {
 }
 
 function sub(name){
+$("#verify").button('傳送中....');
 $.ajax({
   type: 'POST',
   url: "sendverify.php",

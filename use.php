@@ -37,7 +37,7 @@
           <form action="javascript:sub(document.getElementById('Name').value)" method="POST" onSubmit="return checkform()">
             <input type="text" class="form-control" id="Name" name="Name" placeholder="您的巴哈帳號">
             <br>
-            <input type="submit" class="btn btn-primary" id="verify" value="驗證">
+            <input type="submit" class="btn btn-primary" id="verify" value="立即驗證">
           </form>
         </div>
         <div class="f2 col-md-4 col-md-offset-4" align="center" valign="center" style="right:-500px; opacity:0; top:-100px;">
