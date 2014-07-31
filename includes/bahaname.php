@@ -8,8 +8,8 @@ function getbahaname($userid){
 
 	}else{
   		if(preg_match_all('/<span class="TS2">.+<\/span>/',$res,$match)){
-    		preg_replace('/<span class="TS2">/','',$match[0][1]);
-    		preg_replace('/<\/span>/','',$match[0][1]);
+    		$match[0][1]=preg_replace('/<span class="TS2">/i','',$match[0][1]);
+    		$match[0][1]=preg_replace('/<\/span>/i','',$match[0][1]);
     	  	return $match[0][1];
 		}else{
 			return "N/A";
