@@ -31,8 +31,8 @@
 include "config.php";
 include "setmail.php";
 include "includes/bahaname.php";
-
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
+$con->query("SET NAMES utf8");
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
 $id = isset($_GET["id"]) ? $_GET["id"] : "" ;
 $email = isset($_GET["email"]) ? $_GET["email"] : "" ;
