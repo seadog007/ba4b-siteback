@@ -38,7 +38,7 @@ $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
 $IP = $_SERVER['REMOTE_ADDR'];
 $Time = time();
 $Time = date("Y-m-d H:i:s",$Time); 
-$ref_time = 1000;
+$ref_time = 3000;
 if($mode=="baha"){
     $page="verify.php?baha"; 
     include "dist/navbar.php";
@@ -99,6 +99,7 @@ function firstlogin($id){
     }
 }
 ?>
+</div>
 </div>
 <hr>
       <?php include "dist/footer.php" ?>
