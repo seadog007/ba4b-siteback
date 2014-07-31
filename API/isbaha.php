@@ -16,6 +16,4 @@ if ($result === FALSE){
 }
 }
 echo isbahamember(isset($_GET["name"]) ? $_GET["name"] : "");
-
 ?>
-
