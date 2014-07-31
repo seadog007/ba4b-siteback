@@ -28,6 +28,7 @@
 include "config.php";
 $page="verify.php";
 include "dist/navbar.php";
+include "setmail.php";
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
 $id = isset($_GET["id"]) ? $_GET["id"] : "" ;
@@ -59,17 +60,22 @@ if($mode=="baha"){
 	}
 }else if($mode=="email"){
 	if($id!=""&&$email!=""&&$hash!=""){
-		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "'";
-    	$result = @mysqli_query($con, $sql);
-    	$data = $result->fetch_array();
-    	if($data[0]==$id&&$data[1]==0){
-    		$sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "'";
-    		@mysqli_query($con, $sql);
-    	}else if($data[1]==1){
-    		die("已驗證過");
-    	}else{
-    		die("錯誤");
-    	}
+		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "'";
+        $result = @mysqli_query($con, $sql);
+        $data = $result->fetch_array();
+        if($data[0]==$id&&$data[1]==$email&&$data[2]==0){
+            $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "'";
+            @mysqli_query($con, $sql);
+            if(firstlogin($id)){
+                updatamail($id,$mail,$IP);
+                echo '<meta http-equiv="refresh" content="5; url=index.php"></head><body>驗證Email帳號成功，<br>即將跳轉回首頁';
+                include "dist/footer.php";
+            }
+        }else if($data[2]==1){
+            die("已驗證過");
+        }else{
+            die("錯誤");
+        }
 	}
 }
 function firstlogin($id){

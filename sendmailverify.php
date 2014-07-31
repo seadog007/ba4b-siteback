@@ -11,8 +11,6 @@ $Time = date("Y-m-d H:i:s",$Time);
 $Exp = date("Y-m-d H:i:s",$Exp); 
 $Ehash = md5(md5($Time . $email));
 $IP = $_SERVER['REMOTE_ADDR'];
-pSendMail($email,"BA4B服務驗證信",$name . "您好，這裡是BA4B服務中心，<br>請進入網址：" . SYS_URL . "verify.php?mode=email&id=" . $name . "&email=" . $email . "&hash=" . $Ehash . "<br>來完成驗證…<br>BA4B團隊 各種感謝你XD");
-die("OK");
 if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)&&preg_match("/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/",$email)){
     $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
     $sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $name . "'";
