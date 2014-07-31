@@ -1,7 +1,7 @@
 <?php
 
-function getbahaname($user){
-  	$chh = curl_init("http://home.gamer.com.tw/homeindex.php?owner=" . $user);
+function getbahaname($userid){
+  	$chh = curl_init("http://home.gamer.com.tw/homeindex.php?owner=" . $userid);
 	curl_setopt($chh, CURLOPT_POSTFIELDS, "--__X_PAW_BOUNDARY__--\r\n");
 	curl_setopt($chh, CURLOPT_RETURNTRANSFER, TRUE);
 	$res = curl_exec($chh);
