@@ -48,7 +48,7 @@ if($mode=="baha"){
       <div class="container">
         <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center">';
 	if($id!=""&&$hash!=""){
-		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by 1 desc";
+		$sql = "SELECT `BAHA_ID`,`verifycomplete`,`EXPIRE_TIME` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by 1 desc";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
 
@@ -56,7 +56,8 @@ if($mode=="baha"){
         $result = @mysqli_query($con, $sql);
         $data2 = $result->fetch_array();
 
-    	if($data[0]==$id&&$data[1]==0){
+        $left_time = strtotime($data[2]) - strtotime($Time);
+    	if($data[0]==$id&&$data[1]==0&&$left_time>=0){
     		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "'";
     		mysqli_query($con, $sql);
     		if(firstlogin($id)){
@@ -64,9 +65,9 @@ if($mode=="baha"){
     			mysqli_query($con, $sql);
     		}
             echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
-    	}else if($data[0]==$id&&$data[1]==1&&data2[0]==0){
+    	}else if($data[0]==$id&&$data[1]==1&&data2[0]==0&&$left_time>=0){
     		echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
-    	}else if($data[0]==$id&&$data[1]==1&&data2[0]==1){
+    	}else if(($data[0]==$id&&$data[1]==1&&data2[0]==1)||$left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
     		echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
@@ -79,18 +80,21 @@ if($mode=="baha"){
       <div class="container">
         <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center">';
 	if($id!=""&&$email!=""&&$hash!=""){
-		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by 1 desc";
+		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete`,`EXPIRE_TIME` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by 1 desc";
         $result = @mysqli_query($con, $sql);
         $data = $result->fetch_array();
-        if($data[0]==$id&&$data[1]==$email&&$data[2]==0){
+        $left_time = strtotime($data[3]) - strtotime($Time);
+        if($data[0]==$id&&$data[1]==$email&&$data[2]==0&&$left_time>=0){
             $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "'";
             @mysqli_query($con, $sql);
             if(firstlogin($id)){
                 updatamail($id,$email,$IP);
             }
             echo '<p><br><br>已綁定Email帳號與巴哈帳號，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
-        }else if($data[0]==$id&&$data[1]==$email&&$data[2]==1){
+        }else if($data[0]==$id&&$data[1]==$email&&$data[2]==1&&$left_time>=0){
             echo '<p><br><br>已綁定完成過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+        }else if($left_time<0){
+            echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
             echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }
