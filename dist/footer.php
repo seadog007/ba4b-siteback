@@ -1,17 +1,6 @@
 <!DOCTYPE html>
   <footer style="width: 728px;margin-left: auto;margin-right: auto">
 	<div class="row">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-	<ins class="adsbygoogle"
-	     style="display:inline-block;width:728px;height:90px"
-	     data-ad-client="ca-pub-1835688554454248"
-	     data-ad-slot="6502030192"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-	</div>
-	<div class="row">
     <p>這個奇怪的程式是由<a href="http://about.me/pcchou">Pc
     Chou</a>、<a href="http://about.me/seadog007">海豹</a>、<a href=
     "http://home.gamer.com.tw/happyjohn369">曙</a>、<a href=
