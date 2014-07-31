@@ -59,8 +59,8 @@ if($mode=="baha"){
     			mysqli_query($con, $sql);
     		}
             echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
-    	}else if($data[1]==1){
-    		echo '<p><br><br>已驗證過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+    	}else if($data[0]==$id&&$data[1]==1){
+    		echo '<p><br><br>已驗證過，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else{
     		echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
     	}
@@ -82,8 +82,8 @@ if($mode=="baha"){
                 updatamail($id,$email,$IP);
             }
             echo '<p><br><br>已綁定Email帳號與巴哈帳號，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
-        }else if($data[2]==1){
-            echo '<p><br><br>已驗證過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+        }else if($data[0]==$id&&$data[1]==$email&&$data[2]==1){
+            echo '<p><br><br>已綁定完成過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
             echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }
