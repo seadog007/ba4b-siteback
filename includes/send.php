@@ -47,6 +47,6 @@ curl_close($ch);
 }
 
 function SendS($to,$sbj,$content){
-    return Send($to,$sbj,$content, getbahamembername($Name));
+    return Send($to,$sbj,$content, BOT_NICK);
 }
 ?>
