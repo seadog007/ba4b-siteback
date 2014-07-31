@@ -50,7 +50,7 @@ if($mode=="baha"){
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
     	if($data[0]==$id&&$data[1]==0){
-    		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "' order by 1 desc";
+    		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "'";
             echo $sql;
     		mysqli_query($con, $sql);
     		if(firstlogin($id)){
@@ -75,7 +75,7 @@ if($mode=="baha"){
         $result = @mysqli_query($con, $sql);
         $data = $result->fetch_array();
         if($data[0]==$id&&$data[1]==$email&&$data[2]==0){
-            $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "' order by 1 desc";
+            $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "'";
             @mysqli_query($con, $sql);
             if(firstlogin($id)){
                 updatamail($id,$email,$IP);
