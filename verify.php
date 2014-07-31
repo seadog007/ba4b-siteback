@@ -54,7 +54,7 @@ if($mode=="baha"){
 }
 function firstlogin($id){
 	$con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
-	$sql = "SELECT `ID` FROM `list` WHERE `BAHA_ID`='" . $id . "'";
+	$sql = "SELECT `EMAIL` FROM `list` WHERE `BAHA_ID`='" . $id . "'";
     $result = @mysqli_query($con, $sql);
     $data = $result->fetch_array();
     if($data[0]==""){
