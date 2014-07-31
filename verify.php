@@ -101,6 +101,7 @@ function firstlogin($id){
 ?>
 </div>
 </div>
+</div>
 <hr>
       <?php include "dist/footer.php" ?>
     </div>
