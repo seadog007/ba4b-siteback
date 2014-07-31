@@ -43,3 +43,4 @@ phpinfo.php
 testsendmail.php
 gitpull.bat
 custom_footer.php
+*.php~
