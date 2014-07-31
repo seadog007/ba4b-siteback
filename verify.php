@@ -44,23 +44,23 @@ if($mode=="baha"){
     include "dist/navbar.php";
     echo '<div class="jumbotron" style="height:300px">
       <div class="container">
-        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">';
+        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center">';
 	if($id!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by 1 desc";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
     	if($data[0]==$id&&$data[1]==0){
     		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "' order by 1 desc";
-    		@mysqli_query($con, $sql);
+    		mysqli_query($con, $sql);
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
-    			@mysqli_query($con, $sql);
-                echo '<p>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+    			mysqli_query($con, $sql);
+                echo '<p><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     		}
     	}else if($data[1]==1){
-    		echo '<p>已驗證過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+    		echo '<p><br>已驗證過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
     	}else{
-    		echo '<p>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+    		echo '<p><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
     	}
 	}
 }else if($mode=="email"){
@@ -68,7 +68,7 @@ if($mode=="baha"){
     include "dist/navbar.php";
     echo '<div class="jumbotron" style="height:300px">
       <div class="container">
-        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">';
+        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center">';
 	if($id!=""&&$email!=""&&$hash!=""){
 		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by 1 desc";
         $result = @mysqli_query($con, $sql);
@@ -78,12 +78,12 @@ if($mode=="baha"){
             @mysqli_query($con, $sql);
             if(firstlogin($id)){
                 updatamail($id,$email,$IP);
-                echo '<p>驗證Email帳號成功，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+                echo '<p><br>驗證Email帳號成功，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
             }
         }else if($data[2]==1){
-            echo '<p>已驗證過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+            echo '<p><br>已驗證過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
-            echo '<p>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+            echo '<p><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }
 	}
 }
