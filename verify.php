@@ -52,7 +52,7 @@ if($mode=="baha"){
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
 
-        $sql = "SELECT `verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $id . "' order by 1 desc";
+        $sql = "SELECT `verifycomplete` FROM `emailverify` WHERE `BAHA_ID`='" . $id . "' order by 1 desc";
         $result = @mysqli_query($con, $sql);
         $data2 = $result->fetch_array();
 
