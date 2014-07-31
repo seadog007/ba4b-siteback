@@ -13,11 +13,11 @@ $Time = date("Y-m-d H:i:s",$Time);
 
 if($mode=="baha"){
 	if($id!=""&&$hash!=""){
-		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "'";
+		$sql = "SELECT `BAHA_ID`,`verifycomplete` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by 1 desc";
     	$result = @mysqli_query($con, $sql);
     	$data = $result->fetch_array();
     	if($data[0]==$id&&$data[1]==0){
-    		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "'";
+    		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "' order by 1 desc";
     		@mysqli_query($con, $sql);
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
@@ -35,11 +35,11 @@ if($mode=="baha"){
 }else if($mode=="email"){
     echo '<div class="jumbotron"><div class="container"><p align="center" valign="center"><br><br>';
 	if($id!=""&&$email!=""&&$hash!=""){
-		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "'";
+		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by 1 desc";
         $result = @mysqli_query($con, $sql);
         $data = $result->fetch_array();
         if($data[0]==$id&&$data[1]==$email&&$data[2]==0){
-            $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "'";
+            $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "' order by 1 desc";
             @mysqli_query($con, $sql);
             if(firstlogin($id)){
                 updatamail($id,$email,$IP);
