@@ -1,6 +1,6 @@
 <?php
 include "includes/send.php";
-include "API/bahaname.php";
+include "includes/bahaname.php";
 
 $Name = isset($_POST["Name"]) ? $_POST["Name"] : "" ;
 

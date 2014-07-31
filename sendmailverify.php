@@ -1,6 +1,6 @@
 <?php
 include "includes/sendmail.php";
-include "API/bahaname.php";
+include "includes/bahaname.php";
 
 $email = isset($_POST["email"]) ? $_POST["email"] : "" ;
 $hash = isset($_POST["hash"]) ? $_POST["hash"] : "" ;
