@@ -53,13 +53,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">效果介紹</h4>
       </div>
       <div class="modal-body">
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
       </div>
     </div>
   </div>
@@ -70,13 +70,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">如何使用</h4>
       </div>
       <div class="modal-body">
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
       </div>
     </div>
   </div>
@@ -97,7 +97,7 @@
               不過，我們更希望你可以前往<a href="https://github.com/ba4b">我們的GitHub專案</a><br>來進行改良、或是提出建議！</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
       </div>
     </div>
   </div>
@@ -108,10 +108,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-            <center><h2>效果介紹</h2>
+            <center><h2>效果介紹</h2></center>
             <button class="btn btn-default" data-toggle="modal" data-target="#D1">
             看更多 »
-            </button></center>
+            </button>
         </div>
         <div class="col-md-4">
             <center><h2>如何使用</h2></center>
