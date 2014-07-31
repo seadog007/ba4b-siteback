@@ -51,7 +51,6 @@ if($mode=="baha"){
     	$data = $result->fetch_array();
     	if($data[0]==$id&&$data[1]==0){
     		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "'";
-            echo $sql;
     		mysqli_query($con, $sql);
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
