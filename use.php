@@ -31,7 +31,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <p align="center" valign="center"><br>驗證您的巴哈帳號</p>
+        <p id="content" align="center" valign="center"><br>驗證您的巴哈帳號</p>
 
         <br>
         <div class="col-md-4">
