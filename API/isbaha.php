@@ -7,7 +7,7 @@ $result = curl_exec($ch);
 
 if ($result === FALSE){
 }else{
-	if(@preg_match("/巴哈姆特系統訊息/",$result)){
+	if(@preg_match("/巴哈姆特系統訊息/",$result)||$user==""){
 		return 0;
 	}else{
 		return 1;
@@ -16,5 +16,5 @@ if ($result === FALSE){
 
 curl_close($ch);
 }
-echo isbahamember($_GET["name"]);
+echo isbahamember(isset($_GET["name"]) ? $_GET["name"] : "");
 ?>

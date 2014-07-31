@@ -1,7 +1,7 @@
 <?php
 include "includes/send.php";
 
-$Name = $_POST["Name"];
+$Name = isset($_POST["Name"]) ? $_POST["Name"] : "" ;
 
 if(preg_match("/[a-zA-Z0-9]{1,12}/",$Name)){
 $Time = time();
