@@ -31,7 +31,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px; position:absolute;">
+        <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">
           <p><br>驗證您的巴哈帳號</p>
           <br>
           <form action="sendverify.php" method="POST" onSubmit="return checkform()">
@@ -40,7 +40,7 @@
             <input type="submit" class="btn btn-primary" id="verify" value="驗證">
           </form>
         </div>
-        <div class="f2 col-md-4 col-md-offset-4" align="center" valign="center" style="right:-500px; opacity:0; top:0px; position:absolute;">
+        <div class="f2 col-md-4 col-md-offset-4" align="center" valign="center" style="right:-500px; opacity:0; top:-50px;">
           <p><br>驗證完成</p>
           <br>
         </div>
