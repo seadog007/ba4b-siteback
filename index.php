@@ -113,12 +113,12 @@
             </button></center>
         </div>
         <div class="col-md-4">
-            <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#D1">
+            <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#D2">
             <h3>如何使用</h3>
             </button></center>
         </div>
         <div class="col-md-4">
-            <center><button class="btn btn-info btn-lg" data-toggle="modal" data-target="#D1">
+            <center><button class="btn btn-info btn-lg" data-toggle="modal" data-target="#D3">
             <h3>軟體授權</h3>
             </button></center>
         </div>
