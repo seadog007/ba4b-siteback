@@ -28,6 +28,16 @@ function isEmail() {
 	}
 }
 
-
+function sub(name){
+$.ajax({
+  type: 'POST',
+  url: sendverify.php,
+  data: { Name: name },
+  success: function(data) {
+                      $("#msg").html(data);
+                  },
+  async:false
+});
+}
 
 
