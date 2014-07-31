@@ -29,7 +29,7 @@
 
     <?php $page="userman.php"; include "dist/navbar.php" ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="height:300px">
       <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">
           <p><br>驗證您的E-mail位置</p>
           <br>
