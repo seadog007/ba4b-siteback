@@ -32,6 +32,7 @@ include "config.php";
 include "setmail.php";
 include "includes/bahaname.php";
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
+$con->query("SET NAMES utf8");
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
 $id = isset($_GET["id"]) ? $_GET["id"] : "" ;
 $email = isset($_GET["email"]) ? $_GET["email"] : "" ;
@@ -54,9 +55,6 @@ if($mode=="baha"){
     		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "'";
     		mysqli_query($con, $sql);
     		if(firstlogin($id)){
-				mysql_query("SET NAMES 'utf8'");
-				mysql_query("SET CHARACTER_SET_CLIENT=utf8");
-				mysql_query("SET CHARACTER_SET_RESULTS=utf8"); 
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `BAHA_NAME`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "','" . getbahaname($id) . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			mysqli_query($con, $sql);
     		}
