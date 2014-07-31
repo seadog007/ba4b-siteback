@@ -13,6 +13,7 @@ if ($result === FALSE){
 		return 1;
 	}
 }
+echo isbahamember(isset($_GET["name"]) ? $_GET["name"] : "");
 }
 ?>
 
