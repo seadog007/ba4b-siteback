@@ -8,8 +8,8 @@ $result = curl_exec($ch);
 curl_close($ch);
 if ($result === FALSE){
 }else{
-	if(preg_match('/[<span class="TS2">.{1,}<\/span>]/',$result,$matches)||$user==""){
-		echo $matches;
+	if(preg_match('/(<li>...<span class="TS2">.{1,}<\/span><\/li>\n){2}/m',$result,$matches)||$user==""){
+		echo $matches[0];
 	}else{
 		return "N/A";
 	}
