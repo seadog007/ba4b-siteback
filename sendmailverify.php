@@ -20,7 +20,7 @@ if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)&&preg_match("/^\w+((-\w+)|(\.\w+))*\@
        	$sql = "INSERT INTO `emailverify` (`ID`, `BAHA_ID`, `EMAIL`, `EMAIL_HASH`, `TIME`, `EXPIRE_TIME`, `IP`, `verifycomplete`) VALUES (NULL, '" . $name . "', '" . $email . "', '" . $Ehash . "', '" . $Time . "', '" . $Exp . "', '" . $IP . "', '0');";
 		mysqli_query($con,$sql);
 		mysqli_close($con);
-		if(pSendMail($email,"BA4B服務驗證信", getbahamembername($name) . "您好，這裡是BA4B服務中心，<br>請進入網址：" . SYS_URL . "verify.php?mode=email&id=" . $name . "&email=" . $email . "&hash=" . $Ehash . "<br>來完成驗證…<br>BA4B團隊 各種感謝你XD") == 1) {
+		if(pSendMail($email,"BA4B服務驗證信", getbahaname($name) . "您好，這裡是BA4B服務中心，<br>請進入網址：" . SYS_URL . "verify.php?mode=email&id=" . $name . "&email=" . $email . "&hash=" . $Ehash . "<br>來完成驗證…<br>BA4B團隊 各種感謝你XD") == 1) {
 			echo '寄信成功，<br>請至你的Email信箱檢查收信！' ;
 		}else{
 			echo '哭哭';
