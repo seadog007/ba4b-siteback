@@ -1,5 +1,5 @@
 <?php
-function bahamembername($user){
+function isbahamember($user){
 $ch = curl_init("http://home.gamer.com.tw/homeindex.php?owner=".$user);
 curl_setopt($ch, CURLOPT_POSTFIELDS, "--__X_PAW_BOUNDARY__--\r\n");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -15,3 +15,4 @@ if ($result === FALSE){
 }
 }
 ?>
+
