@@ -4,6 +4,7 @@ function updatamail($id,$email,$ip){
 	$con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 	$sql = "UPDATE  `list` SET  `EMAIL` =  '" . $email . "',`HASHED_MAIL` =  '" . $hashmail . "',`MODIFY_IP` =  '" . $ip . "' WHERE `BAHA_ID`='" . $id . "'";
 	@mysqli_query($con, $sql);
+	echo $sql;
 	return true;
 }
 ?>
