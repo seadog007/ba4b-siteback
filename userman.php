@@ -45,7 +45,7 @@
           $result = @mysqli_query($con, $sql);
           $data = $result->fetch_array();
           if($data[0]==$hash&&$data[1]==1){
-            echo '<form action="sendmailverify.php" method="POST" onSubmit="return isEmail()"><input type="text" class="form-control" id="email" name="email" placeholder="您的E-mail位置"><input type="hidden" name="name" value="' . $name . '"><input type="hidden" name="hash" value="' . $hash . '"><br><input type="submit" class="btn btn-primary" id="verify" value="驗證"></form>';
+            echo '<form action="javascript:sub2()" method="POST" onSubmit="return isEmail()"><input type="text" class="form-control" id="email" name="email" placeholder="您的E-mail位置"><input type="hidden" name="name" id="name" value="' . $name . '"><input type="hidden" name="hash" id="hash" value="' . $hash . '"><br><input type="submit" class="btn btn-primary" id="verify" value="立即驗證"></form>';
           }else{
             echo '<p>參數錯誤</p>';
           }
@@ -53,6 +53,11 @@
           echo '<p>不允許直接存取</p>';
         }
         ?>
+        </div>
+        <div class="f2 col-md-4 col-md-offset-4" align="center" valign="center" style="right:-500px; opacity:0; top:-100px;">
+          <br>
+          <p id="msg"></p>
+          <br>
         </div>
       </div>
     </div>

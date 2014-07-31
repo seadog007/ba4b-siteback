@@ -46,5 +46,23 @@ $(".f2").stop(true,false).animate({right:'0px',opacity: 1});
 return 1;
 }
 
-
+function sub2(){
+document.getElementById('verify').value="傳送中...";
+document.getElementById('verify').disabled="disabled";
+var name = document.getElementById('name').value;
+var hash = document.getElementById('hash').value;
+var email = document.getElementById('email').value;
+$.ajax({
+  type: 'POST',
+  url: "sendmailverify.php",
+  data: { name: name , hash: hash , email: email},
+  success: function(data) {
+                      $("#msg").html(data);
+                  },
+  async:false
+});
+$(".f1").stop(true,false).animate({left:'-=500px',opacity: 0});
+$(".f2").stop(true,false).animate({right:'0px',opacity: 1});
+return 1;
+}
 

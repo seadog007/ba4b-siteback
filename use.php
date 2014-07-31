@@ -42,7 +42,7 @@
         </div>
         <div class="f2 col-md-4 col-md-offset-4" align="center" valign="center" style="right:-500px; opacity:0; top:-100px;">
           <br>
-          <p id="msg">驗證完成</p>
+          <p id="msg"></p>
           <br>
         </div>
       </div>
