@@ -21,7 +21,7 @@ if (mysqli_connect_errno()) {
 	$sql = "INSERT INTO `verify` (`ID`, `BAHA_ID`, `BAHA_HASH`, `TIME`, `EXPIRE_TIME`, `IP`, `verifycomplete`) VALUES (NULL, '" . $Name . "', '" . $Hash . "', '" . $Time . "', '" . $Exp . "', '" . $IP . "', '0');";
 	mysqli_query($con,$sql);
 	mysqli_close($con);
-	if(SendS($Name,"BA4B服務驗證信", getbahaname($Name) . "您好，這裡是BA4B服務中心，\r\n請進入網址：" . SYS_URL . "verify.php?mode=baha&id=" . $Name . "&hash=" . $Hash . "\r\n來完成驗證…\r\nBA4B團隊 各種感謝你XD") == 1) {
+	if(SendS($Name,"BA4B服務驗證信", getbahaname($Name) . "您好，這裡是BA4B服務中心，\r\n請進入網址：" . SYS_URL . "verify.php?mode=baha&id=" . $Name . "&hash=" . $Hash . "\r\n來完成驗證…\r\n驗證網址有效期限為兩小時，\r\n如發現頁面過期即有可能是超過驗證有效期限。\r\nBA4B工作團隊 各種感謝你XD") == 1) {
 		echo '服務驗證信發送成功<br>請至你的<a href="http://mailbox.gamer.com.tw/">巴哈站內信</a>檢查收信！' ;
 	}else{
 		echo '哭哭';

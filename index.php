@@ -109,12 +109,16 @@
       <div class="row">
         <div class="col-md-4">
             <center><h2>效果介紹</h2></center>
+            <p><br>就可以替換就對了啦www<br>
+            以下略...</p>
             <button class="btn btn-default" data-toggle="modal" data-target="#D1">
             看更多 »
             </button>
         </div>
         <div class="col-md-4">
             <center><h2>如何使用</h2></center>
+            <p><br>首先，你必須要有一個巴哈帳號(被打<br>
+            以下略...</p>
             <button class="btn btn-default" data-toggle="modal" data-target="#D2">
             看更多 »
             </button>
