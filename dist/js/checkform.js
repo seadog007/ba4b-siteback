@@ -62,11 +62,3 @@ $(".f1").stop(true,false).animate({left:'-=500px',opacity: 0});
 $(".f2").stop(true,false).animate({right:'0px',opacity: 1});
 }
 
-$('#verify').click(function () {
-    var btn = $(this)
-    btn.button('傳送中...')
-    $.ajax(...).always(function () {
-      btn.button('reset')
-    });
-  });
-
