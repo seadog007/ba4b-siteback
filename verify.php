@@ -75,9 +75,9 @@ if($mode=="baha"){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `BAHA_NAME`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "','" . getbahaname($id) . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			mysqli_query($con, $sql);
     		}
-            echo '<p><br><br>驗證巴哈帳號成功，請等5秒…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+            echo '<p><br><br>驗證巴哈帳號成功，<br>即將於5秒後跳轉…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else if($data[0]==$id&&$data[1]==1&&$data2[0]==0&&$left_time>=0){
-    		echo '<p><br><br>驗證巴哈帳號成功，請等5秒…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+    		echo '<p><br><br>驗證巴哈帳號成功，<br>即將於5秒後跳轉…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else if(($data[0]==$id&&$data[1]==1&&$data2[0]==1)||$left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
@@ -102,10 +102,10 @@ if($mode=="baha"){
             if(firstlogin($id)){
 				echo '<p><br><br>已綁定Email帳號與巴哈帳號，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
 			}else{
-				echo '<p><br><br>已綁定過Email帳號與巴哈帳號，並且已經幫你更新，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+				echo '<p><br><br>已更新Email帳號與巴哈帳號連結<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
 			}
         }else if($data[0]==$id&&$data[1]==$email&&$data[2]==1&&$left_time>=0){
-            echo '<p><br><br>已經使用過了！<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+            echo '<p><br><br>此網址已經綁定過了，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else if($left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
