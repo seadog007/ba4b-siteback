@@ -105,7 +105,7 @@ if($mode=="baha"){
 				echo '<p><br><br>已更新Email帳號與巴哈帳號連結<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
 			}
         }else if($data[0]==$id&&$data[1]==$email&&$data[2]==1&&$left_time>=0){
-            echo '<p><br><br>此網址已經綁定過了，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+            echo '<p><br><br>此網址已使用過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else if($left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
