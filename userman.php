@@ -41,10 +41,10 @@
         $name = isset($_GET["name"]) ? $_GET["name"] : "" ;
         if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)){
           $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
-          $sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $name . "'  order by 1 desc";
+          $sql = "SELECT `ID`,`BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $name . "'  order by 1 desc LIMIT 1";
           $result = @mysqli_query($con, $sql);
           $data = $result->fetch_array();
-          if($data[0]==$hash&&$data[1]==1){
+          if($data[1]==$hash&&$data[2]==0){
             echo '<form action="javascript:sub2()" method="POST" onSubmit="return isEmail()"><input type="text" class="form-control" id="email" name="email" placeholder="您的E-mail位置"><input type="hidden" name="name" id="name" value="' . $name . '"><input type="hidden" name="hash" id="hash" value="' . $hash . '"><br><input type="submit" class="btn btn-primary" id="verify" value="立即驗證"></form>';
           }else{
             echo '<p>參數錯誤</p>';
