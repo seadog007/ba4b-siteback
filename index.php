@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="D3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="D3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -101,7 +101,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 
 
@@ -124,15 +124,8 @@
             </button>
         </div>
         <div class="col-md-4">
-            <center><h2>軟體授權</h2></center>
-            <p><br>本程式所有部份皆採：<br>
-              <a href="http://opensource.org/licenses/MIT">The MIT License</a><br>
-              （MIT 許可證）<br>
-              授權，你可以依照授權條款來對本軟體修改、編輯、轉載…等<br>
-              不過，我們更希望你可以前往<a href="https://github.com/ba4b">我們的GitHub專案</a><br>來進行改良、或是提出建議！</p>
-              <button class="btn btn-default" data-toggle="modal" data-target="#D3">
-              看更多 »
-              </button>
+            <center><h2>公告專區</h2></center>
+            <p>公告是什麼，能吃嗎？</p>
         </div>
         
       </div>
