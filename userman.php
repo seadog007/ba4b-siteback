@@ -44,7 +44,7 @@
           $sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $name . "'  order by `ID` desc LIMIT 1";
           $result = @mysqli_query($con, $sql);
           $data = $result->fetch_array();
-          if($data[0]==$hash&&$data[1]==0){
+          if($data[0]==$hash&&$data[1]==1){
             echo '<form action="javascript:sub2()" method="POST" onSubmit="return isEmail()"><input type="text" class="form-control" id="email" name="email" placeholder="您的E-mail位置"><input type="hidden" name="name" id="name" value="' . $name . '"><input type="hidden" name="hash" id="hash" value="' . $hash . '"><br><input type="submit" class="btn btn-primary" id="verify" value="立即驗證"></form>';
           }else{
             echo '<p>參數錯誤</p>';

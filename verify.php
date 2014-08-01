@@ -58,7 +58,7 @@ if($mode=="baha"){
 
         $left_time = strtotime($data[2]) - strtotime($Time);
     	if($data[0]==$id&&$data[1]==0&&$left_time>=0){
-    		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "'";
+    		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
     		mysqli_query($con, $sql);
     		if(firstlogin($id)){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `BAHA_NAME`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "','" . getbahaname($id) . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
@@ -85,7 +85,7 @@ if($mode=="baha"){
         $data = $result->fetch_array();
         $left_time = strtotime($data[3]) - strtotime($Time);
         if($data[0]==$id&&$data[1]==$email&&$data[2]==0&&$left_time>=0){
-            $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "'";
+            $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
             @mysqli_query($con, $sql);
             if(firstlogin($id)){
                 updatamail($id,$email,$IP);

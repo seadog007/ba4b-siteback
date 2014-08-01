@@ -13,7 +13,7 @@ $Ehash = md5(md5($Time . $email));
 $IP = $_SERVER['REMOTE_ADDR'];
 if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)&&preg_match("/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/",$email)){
     $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
-    $sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $name . "'";
+    $sql = "SELECT `BAHA_HASH`,`verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $name . "' order by `ID` desc LIMIT 1";
     $result = @mysqli_query($con, $sql);
     $data = $result->fetch_array();
     if($data[0]==$hash&&$data[1]==1){
