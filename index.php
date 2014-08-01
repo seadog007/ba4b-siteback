@@ -117,7 +117,10 @@ include "dist/navbar.php";
         <div class="col-md-4">
             <center><h2>如何使用</h2></center>
             <p><br>首先，你必須要有一個巴哈帳號(被打<br>
-            以下略...</p>
+            然後安裝我們的userscript，<br>
+            並且綁定巴哈帳號與Email。<br>
+            有沒有很簡單呢？<br>
+            趕快來試試吧</p>
             <button class="btn btn-default" data-toggle="modal" data-target="#D2">
             看更多 »
             </button>
