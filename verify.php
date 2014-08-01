@@ -75,9 +75,9 @@ if($mode=="baha"){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `BAHA_NAME`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "','" . getbahaname($id) . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			mysqli_query($con, $sql);
     		}
-            echo '<p><br><br>驗證巴哈帳號成功</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+            echo '<p><br><br>驗證巴哈帳號成功，請等5秒…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else if($data[0]==$id&&$data[1]==1&&$data2[0]==0&&$left_time>=0){
-    		echo '<p><br><br>驗證巴哈帳號成功</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+    		echo '<p><br><br>驗證巴哈帳號成功，請等5秒…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else if(($data[0]==$id&&$data[1]==1&&$data2[0]==1)||$left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
