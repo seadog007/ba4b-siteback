@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <footer style="width: 728px;margin-left: auto;margin-right: auto">
-	<div class="row">
-	<?php if(file_exists('custom_footer.php'))
+    <div class="row">
+    <?php if(file_exists('custom_footer.php'))
     include 'custom_footer.php'; ?>
     <p>這個奇怪的程式是由<a href="http://about.me/seadog007">海豹</a><a href="http://about.me/pcchou">Pc
     Chou</a>、<a href="home.gamer.com.tw/homeindex.php?owner=mmis1000">殘風</a>、<a href=

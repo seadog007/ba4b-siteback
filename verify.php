@@ -32,14 +32,14 @@ include "config.php";
 include "includes/bahaname.php";
 
 function updatamail($id,$email,$ip){
-	$hashmail = md5(strtolower(trim($email)));
-	$con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
-	$con->query("SET NAMES utf8");
-	$Time = time();
-	$Time = date("Y-m-d H:i:s",$Time); 
-	$sql = "UPDATE `list` SET  `BAHA_NAME` = '" . getbahaname($id) . "',`EMAIL` =  '" . $email . "',`HASHED_MAIL` =  '" . $hashmail . "',`MODIFY_IP` =  '" . $ip . "',`MODIFY_TIME` = '" . $Time . "' WHERE `BAHA_ID`='" . $id . "'";
-	@mysqli_query($con, $sql);
-	return true;
+    $hashmail = md5(strtolower(trim($email)));
+    $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
+    $con->query("SET NAMES utf8");
+    $Time = time();
+    $Time = date("Y-m-d H:i:s",$Time); 
+    $sql = "UPDATE `list` SET  `BAHA_NAME` = '" . getbahaname($id) . "',`EMAIL` =  '" . $email . "',`HASHED_MAIL` =  '" . $hashmail . "',`MODIFY_IP` =  '" . $ip . "',`MODIFY_TIME` = '" . $Time . "' WHERE `BAHA_ID`='" . $id . "'";
+    @mysqli_query($con, $sql);
+    return true;
 }
 
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
@@ -58,40 +58,40 @@ if($mode=="baha"){
     echo '<div class="jumbotron" style="height:300px">
       <div class="container">
         <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center">';
-	if($id!=""&&$hash!=""){
-		$sql = "SELECT `BAHA_ID`,`verifycomplete`,`EXPIRE_TIME` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
-    	$result = @mysqli_query($con, $sql);
-    	$data = $result->fetch_array();
+    if($id!=""&&$hash!=""){
+        $sql = "SELECT `BAHA_ID`,`verifycomplete`,`EXPIRE_TIME` FROM `verify` WHERE `BAHA_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
+        $result = @mysqli_query($con, $sql);
+        $data = $result->fetch_array();
 
         $sql = "SELECT `verifycomplete` FROM `verify` WHERE `BAHA_ID`='" . $id . "' order by `ID` desc LIMIT 1";
         $result = @mysqli_query($con, $sql);
         $data2 = $result->fetch_array();
 
         $left_time = strtotime($data[2]) - strtotime($Time);
-    	if($data[0]==$id&&$data[1]==0&&$left_time>=0){
-    		$sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
-    		mysqli_query($con, $sql);
-    		if(firstlogin($id)){
-    			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `BAHA_NAME`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "','" . getbahaname($id) . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
-    			mysqli_query($con, $sql);
-    		}
+        if($data[0]==$id&&$data[1]==0&&$left_time>=0){
+            $sql = "UPDATE `verify` SET  `verifycomplete` =  '1' WHERE  `BAHA_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
+            mysqli_query($con, $sql);
+            if(firstlogin($id)){
+                $sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `BAHA_NAME`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "','" . getbahaname($id) . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
+                mysqli_query($con, $sql);
+            }
             echo '<p><br><br>驗證巴哈帳號成功，請等5秒…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
-    	}else if($data[0]==$id&&$data[1]==1&&$data2[0]==0&&$left_time>=0){
-    		echo '<p><br><br>驗證巴哈帳號成功，請等5秒…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
-    	}else if(($data[0]==$id&&$data[1]==1&&$data2[0]==1)||$left_time<0){
+        }else if($data[0]==$id&&$data[1]==1&&$data2[0]==0&&$left_time>=0){
+            echo '<p><br><br>驗證巴哈帳號成功，請等5秒…</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+        }else if(($data[0]==$id&&$data[1]==1&&$data2[0]==1)||$left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
-    		echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
-    	}
-	}
+            echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+        }
+    }
 }else if($mode=="email"){
     $page="verify.php?email";
     include "dist/navbar.php";
     echo '<div class="jumbotron" style="height:300px">
       <div class="container">
         <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center">';
-	if($id!=""&&$email!=""&&$hash!=""){
-		$sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete`,`EXPIRE_TIME` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
+    if($id!=""&&$email!=""&&$hash!=""){
+        $sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete`,`EXPIRE_TIME` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
         $result = @mysqli_query($con, $sql);
         $data = $result->fetch_array();
         $left_time = strtotime($data[3]) - strtotime($Time);
@@ -100,10 +100,10 @@ if($mode=="baha"){
             @mysqli_query($con, $sql);
             updatamail($id,$email,$IP);
             if(firstlogin($id)){
-				echo '<p><br><br>已綁定Email帳號與巴哈帳號，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
-			}else{
-				echo '<p><br><br>已綁定過Email帳號與巴哈帳號，並且已經幫你更新，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
-			}
+                echo '<p><br><br>已綁定Email帳號與巴哈帳號，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+            }else{
+                echo '<p><br><br>已綁定過Email帳號與巴哈帳號，並且已經幫你更新，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+            }
         }else if($data[0]==$id&&$data[1]==$email&&$data[2]==1&&$left_time>=0){
             echo '<p><br><br>已經使用過了！<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else if($left_time<0){
@@ -111,17 +111,17 @@ if($mode=="baha"){
         }else{
             echo '<p><br><br>錯誤，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }
-	}
+    }
 }
 function firstlogin($id){
-	$con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
-	$sql = "SELECT `EMAIL` FROM `list` WHERE `BAHA_ID`='" . $id . "'";
+    $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
+    $sql = "SELECT `EMAIL` FROM `list` WHERE `BAHA_ID`='" . $id . "'";
     $result = @mysqli_query($con, $sql);
     $data = $result->fetch_array();
     if($data[0]==""){
-    	return true;
+        return true;
     }else{
-    	return false;
+        return false;
     }
 }
 ?>

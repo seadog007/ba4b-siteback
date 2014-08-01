@@ -8,11 +8,11 @@ $result = curl_exec($ch);
 curl_close($ch);
 if ($result === FALSE){
 }else{
-	if(@preg_match("/巴哈姆特系統訊息/",$result)||$user==""){
-		return 0;
-	}else{
-		return 1;
-	}
+    if(@preg_match("/巴哈姆特系統訊息/",$result)||$user==""){
+        return 0;
+    }else{
+        return 1;
+    }
 }
 }
 echo isbahamember(isset($_GET["name"]) ? $_GET["name"] : "");
