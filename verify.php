@@ -29,8 +29,19 @@
 
 <?php
 include "config.php";
-include "includes/setmail.php";
 include "includes/bahaname.php";
+
+function updatamail($id,$email,$ip){
+	$hashmail = md5(strtolower(trim($email)));
+	$con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
+	$con->query("SET NAMES utf8");
+	$Time = time();
+	$Time = date("Y-m-d H:i:s",$Time); 
+	$sql = "UPDATE `list` SET  `BAHA_NAME` = '" . getbahaname($id) . "',`EMAIL` =  '" . $email . "',`HASHED_MAIL` =  '" . $hashmail . "',`MODIFY_IP` =  '" . $ip . "',`MODIFY_TIME` = '" . $Time . "' WHERE `BAHA_ID`='" . $id . "'";
+	@mysqli_query($con, $sql);
+	return true;
+}
+
 $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 $con->query("SET NAMES utf8");
 $mode = isset($_GET["mode"]) ? $_GET["mode"] : "" ;
@@ -40,7 +51,7 @@ $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
 $IP = $_SERVER['REMOTE_ADDR'];
 $Time = time();
 $Time = date("Y-m-d H:i:s",$Time); 
-$ref_time = 3000;
+$ref_time = 5000;
 if($mode=="baha"){
     $page="verify.php?baha"; 
     include "dist/navbar.php";
@@ -64,9 +75,9 @@ if($mode=="baha"){
     			$sql = "INSERT INTO `list` (`ID`, `BAHA_ID`, `BAHA_NAME`, `EMAIL`, `HASHED_MAIL`, `REGISTER_TIME`, `REGISTER_IP`, `MODIFY_TIME`, `MODIFY_IP`) VALUES (NULL, '" . $id . "','" . getbahaname($id) . "', '', '', '" . $Time . "', '" . $IP . "', '0000-00-00 00:00:00', '0.0.0.0')";
     			mysqli_query($con, $sql);
     		}
-            echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+            echo '<p><br><br>驗證巴哈帳號成功</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else if($data[0]==$id&&$data[1]==1&&$data2[0]==0&&$left_time>=0){
-    		echo '<p><br><br>驗證巴哈帳號成功，<br>即將跳轉到userman.php</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
+    		echo '<p><br><br>驗證巴哈帳號成功</p><script>setTimeout("location.href=\'userman.php?name=' . $id . '&hash=' . $hash . '\'",' . $ref_time . ');</script>';
     	}else if(($data[0]==$id&&$data[1]==1&&$data2[0]==1)||$left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
@@ -87,12 +98,14 @@ if($mode=="baha"){
         if($data[0]==$id&&$data[1]==$email&&$data[2]==0&&$left_time>=0){
             $sql = "UPDATE `emailverify` SET  `verifycomplete` =  '1' WHERE  `EMAIL_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
             @mysqli_query($con, $sql);
+            updatamail($id,$email,$IP);
             if(firstlogin($id)){
-                updatamail($id,$email,$IP);
-            }
-            echo '<p><br><br>已綁定Email帳號與巴哈帳號，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+				echo '<p><br><br>已綁定Email帳號與巴哈帳號，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+			}else{
+				echo '<p><br><br>已綁定過Email帳號與巴哈帳號，並且已經幫你更新，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+			}
         }else if($data[0]==$id&&$data[1]==$email&&$data[2]==1&&$left_time>=0){
-            echo '<p><br><br>已綁定完成過，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
+            echo '<p><br><br>已經使用過了！<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else if($left_time<0){
             echo '<p><br><br>此頁面已過期，<br>即將跳轉回首頁</p><script>setTimeout("location.href=\'index.php\'",' . $ref_time . ');</script>';
         }else{
