@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <title>巴哈頭像大改造 | Better Avatar for Bahamut</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template 
+    <!-- Custom styles for this template
     <link href="jumbotron.css" rel="stylesheet">-->
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -35,7 +35,7 @@
           <br>
 
         <?php
-        include "config.php";
+ include "config.php";
 
         $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
         $name = isset($_GET["name"]) ? $_GET["name"] : "" ;

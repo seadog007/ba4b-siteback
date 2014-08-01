@@ -19,7 +19,7 @@ require_once '../PHPMailerAutoload.php';
  * PHPMailer - PHP email transport unit test class
  * Performs authentication tests
  */
-class PHPMailerTest extends PHPUnit_Framework_TestCase
+class phpmailerTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Holds the default phpmailer instance.
@@ -70,7 +70,7 @@ class PHPMailerTest extends PHPUnit_Framework_TestCase
         if (file_exists('./testbootstrap.php')) {
             include './testbootstrap.php'; //Overrides go in here
         }
-        $this->Mail = new PHPMailer;
+        $this->Mail = new PHPMailer();
         $this->Mail->SMTPDebug = 4; //Full debug output
         $this->Mail->Priority = 3;
         $this->Mail->Encoding = '8bit';
@@ -132,7 +132,6 @@ class PHPMailerTest extends PHPUnit_Framework_TestCase
             shell_exec("ps $p && kill -TERM $p");
         }
     }
-
 
     /**
      * Build the body of the message in the appropriate format.

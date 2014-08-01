@@ -9,9 +9,8 @@ if (preg_match("/[a-zA-Z0-9]/",$name)) {
     $result = mysqli_query($con, $sql);
     $data = $result->fetch_array();
     $hash = $data[0];
-    
+
     echo $hash;
 } else {
     trigger_error('Don\'t try SQL Injection!');
 }
-?>

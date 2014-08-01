@@ -24,7 +24,7 @@
  * @author Chris Ryan <unknown@example.com>
  * @author Marcus Bointon <phpmailer@synchromedia.co.uk>
  */
-class SMTP
+class smtp
 {
     /**
      * The PHPMailer SMTP version number.
@@ -346,7 +346,7 @@ class SMTP
                  */
                 require_once 'extras/ntlm_sasl_client.php';
                 $temp = new stdClass();
-                $ntlm_client = new ntlm_sasl_client_class;
+                $ntlm_client = new ntlm_sasl_client_class();
                 //Check that functions are available
                 if (!$ntlm_client->Initialize($temp)) {
                     $this->error = array('error' => $temp->error);
@@ -580,7 +580,7 @@ class SMTP
     public function hello($host = '')
     {
         // Try extended hello first (RFC 2821)
-        return (boolean)($this->sendHello('EHLO', $host) or $this->sendHello('HELO', $host));
+        return (boolean) ($this->sendHello('EHLO', $host) or $this->sendHello('HELO', $host));
     }
 
     /**
@@ -694,7 +694,7 @@ class SMTP
             $this->edebug('SERVER -> CLIENT: ' . $reply);
         }
 
-        if (!in_array($code, (array)$expect)) {
+        if (!in_array($code, (array) $expect)) {
             $this->last_reply = null;
             $this->error = array(
                 'error' => "$command command failed",

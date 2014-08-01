@@ -7,8 +7,8 @@ $Name = isset($_POST["Name"]) ? $_POST["Name"] : "" ;
 if(preg_match("/[a-zA-Z0-9]{1,12}/",$Name)){
 $Time = time();
 $Exp = time() + (60 * 60 * 2);
-$Time = date("Y-m-d H:i:s",$Time); 
-$Exp = date("Y-m-d H:i:s",$Exp); 
+$Time = date("Y-m-d H:i:s",$Time);
+$Exp = date("Y-m-d H:i:s",$Exp);
 $Hash = md5(md5($Time . $Name));
 $IP = $_SERVER['REMOTE_ADDR'];
 //echo $Name . "<br>" . $Time . "<br>" . $Exp . "<br>" . $Hash;
@@ -31,5 +31,3 @@ if (mysqli_connect_errno()) {
 }else{
     trigger_error('Don\'t try SQL Injection!');
 }
-
-?>

@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <title>巴哈頭像大改造 | Better Avatar for Bahamut</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template 
+    <!-- Custom styles for this template
     <link href="jumbotron.css" rel="stylesheet">-->
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -32,7 +32,10 @@
         document.location.href = "http://killie.tw/";
       </script>
     <![endif]-->
-    <?php $page="index.php"; include "dist/navbar.php" ?>
+    <?php
+$page = "index.php";
+include "dist/navbar.php";
+?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -45,8 +48,6 @@
             </div>
       </div>
     </div>
-
-
 
 <div class="modal fade" id="D1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -103,8 +104,6 @@
   </div>
 </div>-->
 
-
-
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -127,11 +126,13 @@
             <center><h2>公告專區</h2></center>
             <p>公告是什麼，能吃嗎？</p>
         </div>
-        
+
       </div>
 <br><br>
       <hr>
-      <?php include "dist/footer.php" ?>
+      <?php
+include "dist/footer.php";
+?>
     </div>
 
     <!-- Bootstrap core JavaScript

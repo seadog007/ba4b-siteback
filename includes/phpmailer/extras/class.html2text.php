@@ -23,7 +23,7 @@
 /**
  * Converts HTML to formatted plain text
  */
-class Html2Text
+class html2text
 {
     /**
      * Contains the HTML content to convert.

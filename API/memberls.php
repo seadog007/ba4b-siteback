@@ -12,5 +12,3 @@ while($obj = mysqli_fetch_object($result)) {
     $var[] = $obj;
 }
 echo '{"list":'.json_encode($var).'}';
-
-?>

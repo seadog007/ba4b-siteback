@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <title>巴哈頭像大改造 | Better Avatar for Bahamut</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template 
+    <!-- Custom styles for this template
     <link href="jumbotron.css" rel="stylesheet">-->
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -31,12 +31,13 @@
 include "config.php";
 include "includes/bahaname.php";
 
-function updatamail($id,$email,$ip){
+function updatamail($id,$email,$ip)
+{
     $hashmail = md5(strtolower(trim($email)));
     $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
     $con->query("SET NAMES utf8");
     $Time = time();
-    $Time = date("Y-m-d H:i:s",$Time); 
+    $Time = date("Y-m-d H:i:s",$Time);
     $sql = "UPDATE `list` SET  `BAHA_NAME` = '" . getbahaname($id) . "',`EMAIL` =  '" . $email . "',`HASHED_MAIL` =  '" . $hashmail . "',`MODIFY_IP` =  '" . $ip . "',`MODIFY_TIME` = '" . $Time . "' WHERE `BAHA_ID`='" . $id . "'";
     @mysqli_query($con, $sql);
     return true;
@@ -50,10 +51,10 @@ $email = isset($_GET["email"]) ? $_GET["email"] : "" ;
 $hash = isset($_GET["hash"]) ? $_GET["hash"] : "" ;
 $IP = $_SERVER['REMOTE_ADDR'];
 $Time = time();
-$Time = date("Y-m-d H:i:s",$Time); 
+$Time = date("Y-m-d H:i:s",$Time);
 $ref_time = 5000;
 if($mode=="baha"){
-    $page="verify.php?baha"; 
+    $page="verify.php?baha";
     include "dist/navbar.php";
     echo '<div class="jumbotron" style="height:300px">
       <div class="container">
@@ -113,7 +114,8 @@ if($mode=="baha"){
         }
     }
 }
-function firstlogin($id){
+function firstlogin($id)
+{
     $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
     $sql = "SELECT `EMAIL` FROM `list` WHERE `BAHA_ID`='" . $id . "'";
     $result = @mysqli_query($con, $sql);
@@ -141,4 +143,3 @@ function firstlogin($id){
     <script src="dist/js/checkform.js"></script>
   </body>
 </html>
-

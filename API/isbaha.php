@@ -1,9 +1,10 @@
 <?php
 
-function isbahamember($user){
+function isbahamember($user)
+{
 $ch = curl_init("http://home.gamer.com.tw/homeindex.php?owner=".$user);
 curl_setopt($ch, CURLOPT_POSTFIELDS, "--__X_PAW_BOUNDARY__--\r\n");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 curl_close($ch);
 if ($result === FALSE){
@@ -16,4 +17,3 @@ if ($result === FALSE){
 }
 }
 echo isbahamember(isset($_GET["name"]) ? $_GET["name"] : "");
-?>

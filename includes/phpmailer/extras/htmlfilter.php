@@ -722,7 +722,7 @@ function tln_sanitize(
     return $trusted;
 }
 
-// 
+//
 // Use the nifty htmlfilter library
 //
 

@@ -1,7 +1,8 @@
 <?php
-function getbahaname($userid){
+function getbahaname($userid)
+{
       $chh = curl_init("http://home.gamer.com.tw/homeindex.php?owner=" . $userid);
-    curl_setopt($chh, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($chh, CURLOPT_RETURNTRANSFER, true);
     $res = curl_exec($chh);
     if($res === FALSE){
 
@@ -16,4 +17,3 @@ function getbahaname($userid){
     }
     curl_close($chh);
 }
-?>

@@ -7,8 +7,8 @@ $hash = isset($_POST["hash"]) ? $_POST["hash"] : "" ;
 $name = isset($_POST["name"]) ? $_POST["name"] : "" ;
 $Time = time();
 $Exp = $Time + (60 * 60 * 2);
-$Time = date("Y-m-d H:i:s",$Time); 
-$Exp = date("Y-m-d H:i:s",$Exp); 
+$Time = date("Y-m-d H:i:s",$Time);
+$Exp = date("Y-m-d H:i:s",$Exp);
 $Ehash = md5(md5($Time . $email));
 $IP = $_SERVER['REMOTE_ADDR'];
 if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)&&preg_match("/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/",$email)){
@@ -31,5 +31,3 @@ if(preg_match("/[a-zA-Z0-9]{1,12}/",$name)&&preg_match("/^\w+((-\w+)|(\.\w+))*\@
 }else{
     trigger_error('Don\'t try SQL Injection!');
 }
-
-?>

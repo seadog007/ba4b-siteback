@@ -9,9 +9,9 @@ if (preg_match("/[a-zA-Z0-9]/",$name)) {
     $result = mysqli_query($con, $sql);
     $data = $result->fetch_array();
     $hash = $data[0];
-    
+
     $imgf = 'http://www.gravatar.com/avatar/' . $hash . '?s=40';
-    
+
     $img = imagecreatefromstring(file_get_contents($imgf));
     imagesavealpha($img, true);
     header('Content-Type: image/png');
@@ -20,4 +20,3 @@ if (preg_match("/[a-zA-Z0-9]/",$name)) {
 } else {
     trigger_error('Don\'t try SQL Injection!');
 }
-?>
