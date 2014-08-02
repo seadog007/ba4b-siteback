@@ -49,40 +49,6 @@ include "dist/navbar.php";
       </div>
     </div>
 
-<div class="modal fade" id="D1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">效果介紹</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="D2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">如何使用</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!--<div class="modal fade" id="D3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -106,30 +72,9 @@ include "dist/navbar.php";
 
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-            <center><h2>效果介紹</h2></center>
-            <p><br>就可以替換就對了啦www<br>
-            以下略...</p>
-            <button class="btn btn-default" data-toggle="modal" data-target="#D1">
-            看更多 »
-            </button>
+            <center><h1>效果介紹</h1></center>
+            <p style="font-size:20px;">只要安裝好程式，並且在本網站註冊，就能在巴哈上看到你在Gravatar設定的頭像喔！（待更新）</p>
         </div>
-        <div class="col-md-4">
-            <center><h2>如何使用</h2></center>
-            <p><br>首先，你必須要有一個巴哈帳號(被打<br>
-            然後安裝我們的userscript，<br>
-            並且綁定巴哈帳號與Email。<br>
-            有沒有很簡單呢？<br>
-            趕快來試試吧</p>
-            <button class="btn btn-default" data-toggle="modal" data-target="#D2">
-            看更多 »
-            </button>
-        </div>
-        <div class="col-md-4">
-            <center><h2>公告專區</h2></center>
-            <p>公告是什麼，能吃嗎？</p>
-        </div>
-
       </div>
 <br><br>
       <hr>
