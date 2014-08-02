@@ -91,11 +91,6 @@ include "dist/navbar.php";
             <center><h2>公告專區</h2></center>
             <p>2014/8/3  內部測試?<br></p>
             <p>2014/8/4  正式啟用?<br></p>
-            <p>本程式所有部份皆採：<br>
-              <a href="http://opensource.org/licenses/MIT">The MIT License</a><br>
-              （MIT 許可證）<br>
-              授權，你可以依照授權條款來對本軟體修改、編輯、轉載…等<br>
-              不過，我們更希望你可以前往<a href="https://github.com/ba4b">我們的GitHub專案</a><br>來進行改良、或是提出建議！</p>
         </div>
 
       </div>
