@@ -31,13 +31,13 @@ Better Avatar for Bahamut(BA4B) 網站
 4. 打開dist/下的dbstruct.sql，用它來建立資料庫結構。
 5. 恭喜完工wwwww
 
-然後還是建議大家主要使用http://ba4b.net就好…
+然後還是建議大家主要使用[http://ba4b.net](http://ba4b.net)就好…
 
 API使用
 =======
 請看圖表：
 
-| API網址 | GET | 傳回 |
+| API網址 | GET Var | 傳回 |
 ---------|-----|------
 | API/memberls.php | 無 | JSON格式的全部會員+md5後的email列表 |
 | API/ismember.php | name=巴哈帳號 | 1或0，是否為註冊過本服務的帳號 |
