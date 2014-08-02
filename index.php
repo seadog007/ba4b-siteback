@@ -57,7 +57,10 @@ include "dist/navbar.php";
         <h4 class="modal-title" id="myModalLabel">效果介紹</h4>
       </div>
       <div class="modal-body">
-        這裡放圖
+         <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
+              <img src="dist/img/eff1.png" alt="效果圖"></img><br>
+              可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
+            </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
@@ -71,7 +74,7 @@ include "dist/navbar.php";
         <div class="col-md-4">
             <center><h2>效果介紹</h2></center>
             <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
-              <img src="dist/img/eff1.png" alt="效果圖"></img><br>
+              可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
             </p>
             <button class="btn btn-default" data-toggle="modal" data-target="#D1">
             看更多 »
@@ -90,6 +93,7 @@ include "dist/navbar.php";
         </div>
         <div class="col-md-4">
             <center><h2>公告專區</h2></center>
+            <br>
             <p>2014/8/3  內部測試?<br></p>
             <p>2014/8/4  正式啟用?<br></p>
         </div>
