@@ -60,6 +60,9 @@ include "dist/navbar.php";
          <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
               <img src="dist/img/eff1.png" alt="效果圖"></img><br>
               可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
+              <br>
+              Gravatars設定界面<br>
+              <img src="dist/img/gravatars.png" alt="Gravatars設定界面"></img>
             </p>
       </div>
       <div class="modal-footer">
@@ -75,6 +78,7 @@ include "dist/navbar.php";
             <center><h2>效果介紹</h2></center>
             <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
               可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
+              內含效果圖↓
             </p>
             <button class="btn btn-default" data-toggle="modal" data-target="#D1">
             看更多 »
