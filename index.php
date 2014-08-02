@@ -26,13 +26,16 @@
   </head>
 
 <style type="text/css">
-  
-  
-  #div img { 
-max-width:600px; 
-myimg:expression(onload=function(){ 
-this.style.width=(this.offsetWidth > 600)?"600px":"auto"});
-} 
+div img{
+    max-width: 550px;
+    width: expression(this.width > 550 ? "550px" : true);
+    height: auto;
+}
+img{
+  -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
 </style>
   <body>
     <!--[if IE]>
