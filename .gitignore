@@ -44,3 +44,4 @@ testsendmail.php
 gitpull.bat
 custom_footer.php
 *.php~
+*.conf

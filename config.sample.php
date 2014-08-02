@@ -9,7 +9,7 @@
  * After editing, Please rename this file to config.php. | 編輯後，請把檔案名稱改成config.php。
  */
 
-
+date_default_timezone_set ("Asia/Taipei");
 // System Settings - System related settings.
 // 系統設定 - 系統相關設定。
 
