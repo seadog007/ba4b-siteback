@@ -70,8 +70,10 @@ include "dist/navbar.php";
       <div class="row">
         <div class="col-md-4">
             <center><h2>效果介紹</h2></center>
-            <p><br>就可以替換就對了啦www<br>
-            以下略...</p>
+            <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
+              <img src="dist/img/eff1.png" alt="效果圖1"></img><br>
+              <img src="dist/img/eff2.png" alt="效果圖2"></img>
+            </p>
             <button class="btn btn-default" data-toggle="modal" data-target="#D1">
             看更多 »
             </button>
