@@ -73,8 +73,10 @@ include "dist/navbar.php";
               <img src="dist/img/eff1.png" alt="效果圖"></img><br>
               可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
               <br>
-              Gravatars設定界面<br>
+              Gravatar設定後，這樣就是成功：<br>
               <img src="dist/img/gravatars.png" alt="Gravatars設定界面"></img>
+              <br>
+              <a href="http://briian.com/5535/gravatar.html">Gravatar教學</a>
             </p>
       </div>
       <div class="modal-footer">
@@ -91,7 +93,7 @@ include "dist/navbar.php";
             <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
               可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
               內含效果圖：
-            <button class="btn btn-info" data-toggle="modal" data-target="#D1">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#D1">
             看更多 »
             </button></p>
         </div>
@@ -101,7 +103,7 @@ include "dist/navbar.php";
             然後安裝我們的userscript，<br>
             並且綁定巴哈帳號與Email。<br>
             有沒有很簡單呢？<br>
-            趕快來試試吧！<br>
+            趕快來試試吧！
             <a class="btn btn-success" href="use.php">
             由此去 »
             </a></p>
