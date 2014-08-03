@@ -90,11 +90,10 @@ include "dist/navbar.php";
             <center><h2>效果介紹</h2></center>
             <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
               可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
-              內含效果圖↓
-            </p>
-            <button class="btn btn-default" data-toggle="modal" data-target="#D1">
+              內含效果圖：
+            <button class="btn btn-primary" data-toggle="modal" data-target="#D1">
             看更多 »
-            </button>
+            </button></p>
         </div>
         <div class="col-md-4">
             <center><h2>如何使用</h2></center>
@@ -102,10 +101,10 @@ include "dist/navbar.php";
             然後安裝我們的userscript，<br>
             並且綁定巴哈帳號與Email。<br>
             有沒有很簡單呢？<br>
-            趕快來試試吧</p>
-            <a class="btn btn-default" href="use.php">
-            看更多 »
-            </a>
+            趕快來試試吧！
+            <a class="btn btn-success" href="use.php">
+            由此去 »
+            </a></p>
         </div>
         <div class="col-md-4">
             <center><h2>公告專區</h2></center>
