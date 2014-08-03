@@ -101,7 +101,7 @@ include "dist/navbar.php";
             然後安裝我們的userscript，<br>
             並且綁定巴哈帳號與Email。<br>
             有沒有很簡單呢？<br>
-            趕快來試試吧！
+            趕快來試試吧！<br>
             <a class="btn btn-success" href="use.php">
             由此去 »
             </a></p>
