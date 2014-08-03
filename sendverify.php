@@ -2,7 +2,7 @@
 include "includes/send.php";
 include "includes/bahaname.php";
 
-$Name = isset($_POST["Name"]) ? $_POST["Name"] : "" ;
+$Name = strtolower(isset($_POST["Name"]) ? $_POST["Name"] : "") ;
 
 if(preg_match("/[a-zA-Z0-9]{1,12}/",$Name)){
 $Time = time();
