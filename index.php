@@ -91,7 +91,7 @@ include "dist/navbar.php";
             <p><br>使用此插件可以替換原本巴哈的半付費頭像<br>
               可以綁定巴哈帳號與<a href="http://en.gravatar.com/">Gravatar</a><br>
               內含效果圖：
-            <button class="btn btn-primary" data-toggle="modal" data-target="#D1">
+            <button class="btn btn-info" data-toggle="modal" data-target="#D1">
             看更多 »
             </button></p>
         </div>
