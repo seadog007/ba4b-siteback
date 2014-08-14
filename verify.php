@@ -91,7 +91,7 @@ if($mode=="baha"){
       <div class="container">
         <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center">';
     if($id!=""&&$email!=""&&$hash!=""){
-        $sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete`,`EXPIRE_TIME` FROM `emailverify` WHERE `EMAIL_HASH`='" . $hash . "' order by `ID` desc LIMIT 1";
+        $sql = "SELECT `BAHA_ID`,`EMAIL`,`verifycomplete`,`EXPIRE_TIME` FROM `emailverify` WHERE `EMAIL_HASH`='" . addslashes($hash) . "' order by `ID` desc LIMIT 1";
         $result = @mysqli_query($con, $sql);
         $data = $result->fetch_array();
         $left_time = strtotime($data[3]) - strtotime($Time);
