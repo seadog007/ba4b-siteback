@@ -18,7 +18,7 @@ $con=@mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME) or print("Failed to connec
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }else{
-    $sql = "INSERT INTO `verify` (`ID`, `BAHA_ID`, `BAHA_HASH`, `TIME`, `EXPIRE_TIME`, `IP`, `verifycomplete`) VALUES (NULL, '" . mysqli::escape_string($Name) . "', '" . mysqli::escape_string($Hash) . "', '" . mysqli::escape_string($Time) . "', '" . mysqli::escape_string($Exp) . "', '" . mysqli::escape_string($IP) . "', '0');";
+    $sql = "INSERT INTO `verify` (`ID`, `BAHA_ID`, `BAHA_HASH`, `TIME`, `EXPIRE_TIME`, `IP`, `verifycomplete`) VALUES (NULL, '" . addslashes($Name) . "', '" . addslashes($Hash) . "', '" . addslashes($Time) . "', '" . addslashes($Exp) . "', '" . addslashes($IP) . "', '0');";
     mysqli_query($con,$sql);
     mysqli_close($con);
     if(SendS($Name,"BA4B服務驗證信", getbahaname($Name) . "您好，這裡是BA4B服務中心，\r\n請進入網址：\r\n" . SYS_URL . "verify.php?mode=baha&id=" . $Name . "&hash=" . $Hash . "\r\n完成驗證…\r\n驗證網址有效期限為兩小時，\r\n如發現頁面過期即有可能是超過驗證有效期限。\r\nBA4B工作團隊 感謝您！\r\n\r\n（備註：此為系統自動發訊，請不要直接回覆本郵件）") == 1) {
