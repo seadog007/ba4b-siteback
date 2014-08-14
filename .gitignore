@@ -45,3 +45,5 @@ gitpull.bat
 custom_footer.php
 *.php~
 *.conf
+pcc/
+ng/
