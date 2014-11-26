@@ -29,17 +29,11 @@
 
     <?php $page="use.php"; include "dist/navbar.php" ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-      
-      
-      <div class="container">
+  <div class="container">
           <div class="row">
               <p>test</p>
           </div>
       </div>
-      
-      
-      
-      
     <div class="jumbotron" style="height:300px">
       <div class="container">
         <div class="f1 col-md-4 col-md-offset-4" align="center" valign="center" style="top:0px;">

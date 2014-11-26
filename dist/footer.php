@@ -8,7 +8,7 @@
     "http://home.gamer.com.tw/happyjohn369">曙</a>、<a href=
     "http://home.gamer.com.tw/homeindex.php?owner=kyle23172982">揪凱</a>、<a href="http://about.me/denny0223">Denny
     Huang</a>…等數不清的人一起協作，才能問世的。<br>
-    前往<a href="https://github.com/ba4b">我們的GitHub專案</a>來了解更多！<br>
+    前往<a href="https://github.com/ba4b">我們的GitHub專案列表</a>來了解更多！<br>
     本程式所有部份皆採：<a href="http://opensource.org/licenses/MIT">The MIT License</a>（MIT 許可證）授權，你可以依照授權條款來對本軟體修改、編輯、轉載…等。（文件部份採<a href="https://creativecommons.org/licenses/by-sa/3.0/tw/">CC BY-SA 3.0</a>）<br>
     不過，我們更希望你可以前往<a href="https://github.com/ba4b">我們的GitHub專案</a>來進行改良、或是提出建議！<br>
     這個頁面上的廣告將會被用於改善本服務！<br>
