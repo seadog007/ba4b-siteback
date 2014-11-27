@@ -1,4 +1,3 @@
-<!DOCTYPE html>
   <footer style="width: 728px;margin-left: auto;margin-right: auto">
     <div class="row">
     <?php if(file_exists('custom_footer.php'))
