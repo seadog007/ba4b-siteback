@@ -23,7 +23,8 @@ Better Avatar for Bahamut(BA4B) 網站
 --------
 1. 先下載這個repo。
   * Git clone(HTTPS/SSH當然都可以囉)
-  * [zip download](https://github.com/ba4b/ba4b-siteback/archive/master.zip)
+    * 請務必要連著 includes/PHPMailer 這個 submodule 一起 clone.
+    * 你可以在 git clone 後面加上 --resursive
   * 等等之類的…
 2. 用你的MySQL編輯工具建立資料庫。
 3. 然後依照[config.sample.php]的指示修改設定檔，並且更名成[config.php]。
