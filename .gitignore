@@ -39,9 +39,7 @@ Icon
 #other test files
 config.php
 testsend.php
-phpinfo.php
 testsendmail.php
-gitpull.bat
 custom_footer.php
 *.php~
 *.conf
